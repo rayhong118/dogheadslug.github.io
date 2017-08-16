@@ -202,7 +202,7 @@ input:invalid, input.error, textarea:invalid, textarea.error {background: #ffdfd
 
 @media all and (min-width:600px) {
   .ham {display:none!important}
-  .burger.accordion * {max-height:10000px; overflow:visible}
+  .burger.accordion * {max-height:1000px; overflow:visible}
 }
 
 /*** sliding sidebar ***/
@@ -316,8 +316,8 @@ a:not(.btn):not(.noeffect):after {
 .accordion>input:checked ~ label:before {content:"\25bc"; color:#ddd}
 .accordion>input {display:none}
 .accordion>input:checked ~ *:not(label) {
-  max-height: 10000px ;
-  overflow:hidden ;
+  max-height: 1000px !important;
+  overflow:hidden !important;
   -webkit-transition: max-height .3s ease-in;
   transition: max-height .3s ease-in;
 }
@@ -367,7 +367,7 @@ a:not(.btn):not(.noeffect):after {
   display: inline-block;
 }
 .tags.dismissible > span:hover {opacity: 0.5}
-.tags.dismissible > span:not(.off):after {content:" ?"}
+.tags.dismissible > span:not(.off):after {content:" ✕"}
 .tags > span.off {background-color: #ccc}
 .tags.dismissible > span.off:hover {background-color:#26a69a}
 
