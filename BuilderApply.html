@@ -1,0 +1,110 @@
+<html>
+    <head>
+        <title>Builder Application Board</title>
+        <link href="stupid.css" rel="stylesheet" type="text/css"/>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" 
+        rel="stylesheet">
+        <meta charset="utf-8">
+        <style>
+        
+            #to-top {
+                position: fixed;
+                bottom: 5em;
+                right: 5em;
+            }
+        </style>
+    </head>
+     
+    <body>
+        <header class="container center padded blue">
+            <div class="threequarters padded">
+            <a href="index.html"><font color="white">Back to main page 回到主页</font></a>
+          
+            <h2 class="padded"><font>Builder Application Page<br>建筑师申请页面</font></h2>
+            
+            </div>
+        </header>
+        <div class="padded container center aqua">
+        <div class="threequarters">
+            <a class="btn rounded navy" 
+            href="index.html"><h6>Home</h6></a>
+            <a class="btn rounded navy pulse" 
+                href="DC.html"><h6>DC</h6></a>
+            
+
+        </div>
+        </div>
+        
+        <div class="padded container center">
+        
+        <div class="padded threequarters silver">
+            <h4 class='padded'> 
+            Builder Qulification Test Appointment<br> 建筑师资格测试预约
+            </h4>
+            <h6 class='threequarters padded'>
+            For the test date, your input should include "/". Eg. 2017/09/15<br>
+            考核日期需包含“/”。 例子：2017/09/15<br>
+            </h6>
+            
+            <form class = "center padded ">
+                <div class="container">
+                    <label class="quarter right">in-gameID <br>游戏内名字</label>
+                    <div class="half">
+                    <input type="text" class="fill">
+                    </div>
+                </div><br>
+                
+                <div class="container">
+                    <label class="quarter right">Target position <br>申请职位</label>
+                    <div class="half">
+                    <select class="fill">
+                        <option>Probational Architect 见习建筑师</option>
+                        <option>Junior Architect 初级建筑师</option>
+                        <option>Medium-level Architect 中级建筑师</option>
+                        <option>Interior Designer 内部设计师</option>
+                        <option>Senior Architect 高级建筑师</option>
+                        <option>Senior Architect 中级建筑师</option>
+                        <option>Infrastructure Engineer 基建工程师</option>
+                    </select>
+                    </div>
+                </div><br>
+                
+                <div class="container">
+                    <label class="quarter right">Test date (yyyy/mm/dd)
+                    <br>考核日期（年/月/日）</label>
+                    <div class="half">
+                    <input type="text" class="fill">
+                    </div>
+                </div><br>
+                
+                <div class="container">
+                    <label class="quarter right"></label>
+                    <div class="half">
+                        <input type="submit">
+                    </div>
+                </div>
+                
+            </form>
+            
+        </div>
+        </div>
+        
+        
+        <div class="padded container center">
+        <div class="padded threequarters silver">
+            <h4 class="padded">Appointment in queue currently <br>当前收到的预约</h4>
+        
+            <h4 class="padded">List of builders <br>建筑师列表</h4>
+        </div>
+        </div>
+        
+        <a class="btn glass padded" id="to-top" onclick="goTop()" ><i class="fa fa-angle-double-up fa-5x"></i></a>
+        
+
+
+    
+<script>
+  function goTop(){
+    scroll(0,0);
+  }
+</script>
