@@ -55,7 +55,7 @@
                 </div><br>
                 
                 <div class="container">
-                    <label class="quarter right">Target position <br>申请职位</label>
+                    <label class="quarter right">You are applying for: <br>你申请的职位</label>
                     <div class="half">
                     <select class="fill">
                         <option>Probational Architect 见习建筑师</option>
@@ -77,8 +77,8 @@
                 </div><br>
                 
                 <div class="container">
-                    <label class="quarter right"></label>
-                    <div class="half">
+                    <label class="quarter right "></label>
+                    <div class="half rounded">
                         <input type="submit">
                     </div>
                 </div>
@@ -103,7 +103,42 @@
 
     
 <script>
-  function goTop(){
-    scroll(0,0);
-  }
+	function goTop(){
+		scroll(0,0);
+	}
+	
+	//https://www.w3schools.com/xml/tryit.asp?filename=tryxml_display_table
+	//XML function, get actual data from XML database
+
+	//it turned out that xml file name should be different from html file name
+	
+	function loadXMLDoc() {
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				getDataSet(this);
+			}
+			//else alert("database not ready yet!");
+		};
+		xmlhttp.open("GET", "BuilderInfo.xml", true);//get data from database
+		xmlhttp.send();
+	}
+	
+	//get a specific set of data from database
+	function getDataSet(xml) {
+		var i;
+		var xmlDoc = xml.responseXML;
+		var table="<tr><th>Image</th><th>Discription</th></tr>";
+		var x = xmlDoc.getElementsByTagName(roomnum);
+		for (i = 0; i <x.length; i++) { 
+			table += "<tr><td>" +
+			x[i].getElementsByTagName("ID")[0].childNodes[0].nodeValue +
+			"</td><td>" +
+			x[i].getElementsByTagName("Position")[0].childNodes[0].nodeValue +
+			"</td><td>" +
+			x[i].getElementsByTagName("Date")[0].childNodes[0].nodeValue +
+			"</td></tr>";
+		}
+		document.getElementById("demo").innerHTML = table;
+	}
 </script>
