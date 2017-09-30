@@ -94,9 +94,11 @@
             <h4 class="padded">Appointment in queue currently <br>当前收到的预约</h4>
         
             <h4 class="padded">List of builders <br>建筑师列表</h4>
-			<button type="button" onclick="loadXMLDoc()">Get Builder List</button>
-			<br><br>
-			<table id="demo"></table>
+            <div class="padded">
+                <button type="button" onclick="loadXMLDoc()">Get Builder List</button>
+                <br><br>
+                <table id="demo"></table>
+            </div>
         </div>
         </div>
         
@@ -106,42 +108,42 @@
 
     
 <script>
-	function goTop(){
-		scroll(0,0);
-	}
-	
-	//https://www.w3schools.com/xml/tryit.asp?filename=tryxml_display_table
-	//XML function, get actual data from XML database
+    function goTop(){
+        scroll(0,0);
+    }
+    
+    //https://www.w3schools.com/xml/tryit.asp?filename=tryxml_display_table
+    //XML function, get actual data from XML database
 
-	//it turned out that xml file name should be different from html file name
-	
-	function loadXMLDoc() {
-		var xmlhttp = new XMLHttpRequest();
-		xmlhttp.onreadystatechange = function() {
-			if (this.readyState == 4 && this.status == 200) {
-				getDataSet(this);
-			}
-			//else alert("database not ready yet!");
-		};
-		xmlhttp.open("GET", "BuilderInfo.xml", true);//get data from database
-		xmlhttp.send();
-	}
-	
-	//get a specific set of data from database
-	function getDataSet(xml) {
-		var i;
-		var xmlDoc = xml.responseXML;
-		var table="<tr><th>ID</th><th>Position</th><th>Date</th></tr>";
-		var x = xmlDoc.getElementsByTagName("Builder");
-		for (i = 0; i <x.length; i++) { 
-			table += "<tr><td>" +
-			x[i].getElementsByTagName("ID")[0].childNodes[0].nodeValue +
-			"</td><td>" +
-			x[i].getElementsByTagName("Position")[0].childNodes[0].nodeValue +
-			"</td><td>" +
-			x[i].getElementsByTagName("Date")[0].childNodes[0].nodeValue +
-			"</td></tr>";
-		}
-		document.getElementById("demo").innerHTML = table;
-	}
+    //it turned out that xml file name should be different from html file name
+    
+    function loadXMLDoc() {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                getDataSet(this);
+            }
+            //else alert("database not ready yet!");
+        };
+        xmlhttp.open("GET", "BuilderInfo.xml", true);//get data from database
+        xmlhttp.send();
+    }
+    
+    //get a specific set of data from database
+    function getDataSet(xml) {
+        var i;
+        var xmlDoc = xml.responseXML;
+        var table="<tr><th>ID</th><th>Position</th><th>Date</th></tr>";
+        var x = xmlDoc.getElementsByTagName("Builder");
+        for (i = 0; i <x.length; i++) { 
+            table += "<tr><td>" +
+            x[i].getElementsByTagName("ID")[0].childNodes[0].nodeValue +
+            "</td><td>" +
+            x[i].getElementsByTagName("Position")[0].childNodes[0].nodeValue +
+            "</td><td>" +
+            x[i].getElementsByTagName("Date")[0].childNodes[0].nodeValue +
+            "</td></tr>";
+        }
+        document.getElementById("demo").innerHTML = table;
+    }
 </script>
