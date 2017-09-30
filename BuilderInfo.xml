@@ -12,4 +12,10 @@
 	<Position>Junior Architect 初级建筑师</Position>
 	<Date>2017/09/15</Date>
 	</Builder>
+	
+	<Application>
+	<ID>testID</ID>
+	<Position>Junior Architect 初级建筑师</Position>
+	<Date>2017/09/30</Date>
+	</Application>
 </CATALOG>
