@@ -131,7 +131,7 @@
 		var i;
 		var xmlDoc = xml.responseXML;
 		var table="<tr><th>ID</th><th>Position</th><th>Date</th></tr>";
-		var x = xmlDoc.getElementsByTagName(roomnum);
+		var x = xmlDoc.getElementsByTagName("Builder");
 		for (i = 0; i <x.length; i++) { 
 			table += "<tr><td>" +
 			x[i].getElementsByTagName("ID")[0].childNodes[0].nodeValue +
