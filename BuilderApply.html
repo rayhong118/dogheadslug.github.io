@@ -133,7 +133,7 @@
     function getDataSet(xml, type) {
         var i;
         var xmlDoc = xml.responseXML;
-        var table="<tr><th>ID</th><th>Position</th><th>Date</th></tr>";
+        var table="<tr><th>ID</th><th>Position 职位</th><th>Date 日期</th></tr>";
         var x = xmlDoc.getElementsByTagName(type);
         for (i = 0; i <x.length; i++) { 
             table += "<tr><td>" +
