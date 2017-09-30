@@ -93,15 +93,15 @@
         <div class="padded container center">
         <div class="padded threequarters silver">
             <h4 class="padded">Appointment in queue currently <br>当前收到的预约</h4>
-        
+				<button type="button" onclick="loadXMLDoc('Application')">Get Application List</button>
+                <br><br>
+                <table id="Application"></table>
+			
             <h4 class="padded">List of builders <br>建筑师列表</h4>
             <div class="padded">
-			
-
-				
                 <button type="button" onclick="loadXMLDoc('Builder')">Get Builder List</button>
                 <br><br>
-                <table id="builder"></table>
+                <table id="Builder"></table>
             </div>
         </div>
         </div>
@@ -148,6 +148,6 @@
             x[i].getElementsByTagName("Date")[0].childNodes[0].nodeValue +
             "</td></tr>";
         }
-        document.getElementById("builder").innerHTML = table;
+        document.getElementById(type).innerHTML = table;
     }
 </script>
