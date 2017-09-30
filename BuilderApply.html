@@ -95,7 +95,7 @@
         
             <h4 class="padded">List of builders <br>建筑师列表</h4>
             <div class="padded">
-                <button type="button" onclick="loadXMLDoc()">Get Builder List</button>
+                <button type="button" onclick="loadXMLDoc("Builder")">Get Builder List</button>
                 <br><br>
                 <table id="demo"></table>
             </div>
@@ -117,11 +117,11 @@
 
     //it turned out that xml file name should be different from html file name
     
-    function loadXMLDoc() {
+    function loadXMLDoc(type) {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                getDataSet(this);
+                getDataSet(this,type);
             }
             //else alert("database not ready yet!");
         };
@@ -130,11 +130,11 @@
     }
     
     //get a specific set of data from database
-    function getDataSet(xml) {
+    function getDataSet(xml, type) {
         var i;
         var xmlDoc = xml.responseXML;
         var table="<tr><th>ID</th><th>Position</th><th>Date</th></tr>";
-        var x = xmlDoc.getElementsByTagName("Builder");
+        var x = xmlDoc.getElementsByTagName(type);
         for (i = 0; i <x.length; i++) { 
             table += "<tr><td>" +
             x[i].getElementsByTagName("ID")[0].childNodes[0].nodeValue +
