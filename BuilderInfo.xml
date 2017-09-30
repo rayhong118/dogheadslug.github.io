@@ -1,9 +1,15 @@
 <CATALOG>
-		<Builder>
-		<ID>doghead9</ID>
-		<!--current position-->
-		<Position>Admin</Position>
-		<!--start date-->
-		<Date>2017/09/15</Date>
-		</Builder>
+	<Builder>
+	<ID>doghead9</ID>
+	<!--current position-->
+	<Position>Admin 管理员</Position>
+	<!--start date-->
+	<Date>2017/09/15</Date>
+	</Builder>
+	
+	<Builder>
+	<ID>CANDYTOSS</ID>
+	<Position>Junior Architect 初级建筑师</Position>
+	<Date>2017/09/15</Date>
+	</Builder>
 </CATALOG>
