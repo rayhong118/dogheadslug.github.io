@@ -95,9 +95,17 @@
         
             <h4 class="padded">List of builders <br>建筑师列表</h4>
             <div class="padded">
-                <button type="button" onclick="loadXMLDoc('Builder')">Get Builder List</button>
+			
+			
+			    $(document).ready(function(){
+					$loadXMLDoc('Builder');
+				});
+				<table id="builder"></table>
+			
+			
+                <!--button type="button" onclick="loadXMLDoc('Builder')">Get Builder List</button>
                 <br><br>
-                <table id="demo"></table>
+                <table id="demo"></table-->
             </div>
         </div>
         </div>
@@ -144,6 +152,6 @@
             x[i].getElementsByTagName("Date")[0].childNodes[0].nodeValue +
             "</td></tr>";
         }
-        document.getElementById("demo").innerHTML = table;
+        document.getElementById("builder").innerHTML = table;
     }
 </script>
