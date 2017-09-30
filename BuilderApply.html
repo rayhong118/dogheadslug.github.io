@@ -98,7 +98,9 @@
         </div>
         
         <a class="btn glass padded" id="to-top" onclick="goTop()" ><i class="fa fa-angle-double-up fa-5x"></i></a>
-        
+        <button type="button" onclick="loadXMLDoc()">Get Builder List</button>
+		<br><br>
+		<table id="demo"></table>
 
 
     
@@ -128,7 +130,7 @@
 	function getDataSet(xml) {
 		var i;
 		var xmlDoc = xml.responseXML;
-		var table="<tr><th>Image</th><th>Discription</th></tr>";
+		var table="<tr><th>ID</th><th>Position</th><th>Date</th></tr>";
 		var x = xmlDoc.getElementsByTagName(roomnum);
 		for (i = 0; i <x.length; i++) { 
 			table += "<tr><td>" +
