@@ -4,7 +4,7 @@
         <link href="stupid.css" rel="stylesheet" type="text/css"/>
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" 
         rel="stylesheet">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <meta charset="utf-8">
         <style>
         
@@ -51,20 +51,20 @@
                 <div class="container">
                     <label class="quarter right">in-gameID <br>游戏内名字</label>
                     <div class="half">
-                    <input type="text" class="fill">
+                    <input type="text" class="fill" id="ID">
                     </div>
                 </div><br>
                 
                 <div class="container">
                     <label class="quarter right">You are applying for: <br>你申请的职位</label>
                     <div class="half">
-                    <select class="fill">
-                        <option>Probational Architect 见习建筑师</option>
-                        <option>Junior Architect 初级建筑师</option>
-                        <option>Medium-level Architect 中级建筑师</option>
-                        <option>Interior Designer 内部设计师</option>
-                        <option>Senior Architect 高级建筑师</option>
-                        <option>Infrastructure Engineer 基建工程师</option>
+                    <select class="fill" id="Position">
+                        <option value="Probational Architect 见习建筑师">Probational Architect 见习建筑师</option>
+                        <option value="Junior Architect 初级建筑师">Junior Architect 初级建筑师</option>
+                        <option value="Medium-level Architect 中级建筑师">Medium-level Architect 中级建筑师</option>
+                        <option value="Interior Designer 内部设计师">Interior Designer 内部设计师</option>
+                        <option value="Senior Architect 高级建筑师">Senior Architect 高级建筑师</option>
+                        <option value="Infrastructure Engineer 基建工程师">Infrastructure Engineer 基建工程师</option>
                     </select>
                     </div>
                 </div><br>
@@ -73,7 +73,7 @@
                     <label class="quarter right">Test date (yyyy/mm/dd)
                     <br>考核日期（年/月/日）</label>
                     <div class="half">
-                    <input type="text" class="fill">
+                    <input type="text" class="fill" id="Date">
                     </div>
                 </div><br>
                 
@@ -93,17 +93,17 @@
         <div class="padded container center">
         <div class="padded threequarters silver">
             <h4 class="padded">Appointment in queue currently <br>当前收到的预约</h4>
-	    <div class="padded">
-		<button type="button" onclick="loadXMLDoc('Application')">Get Application List</button>
+            <div class="padded">
+                <button type="button" onclick="loadXMLDoc('Application')">Get Application List</button>
                 <br><br>
                 <table id="Application" class="center fill"></table>
-	    </div>
-	
+            </div>
+            
             <h4 class="padded">List of builders <br>建筑师列表</h4>
             <div class="padded">
                 <button type="button" onclick="loadXMLDoc('Builder')">Get Builder List</button>
                 <br><br>
-                <table id="Builder" class="center fill"></table>
+                <table id="Builder"  class="center fill"></table>
             </div>
         </div>
         </div>
@@ -139,7 +139,7 @@
     function getDataSet(xml, type) {
         var i;
         var xmlDoc = xml.responseXML;
-        var table="<tr><th>ID          </th><th>Position 职位                              </th><th>Date 日期          </th></tr>";
+        var table="<tr><th>ID</th><th>Position 职位</th><th>Date 日期</th></tr>";
         var x = xmlDoc.getElementsByTagName(type);
         for (i = 0; i <x.length; i++) { 
             table += "<tr><td>" +

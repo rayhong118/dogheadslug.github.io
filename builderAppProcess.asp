@@ -32,19 +32,12 @@ Function ConvertFormtoXML(strXMLFilePath, strFileName)
   'to the XML document
   If instr(1,Request.Form.Key(x),"btn") = 0 Then
    
-   'Create an element "field".
-   Set objFeild = objDom.createElement("field")
-   
-   'Create an attribute, "id".
-   Set objattID = objDom.createAttribute("id")
+   'Create an element "ID".
+   Set objID = objDom.createElement("ID")
    
    'Set the value of the id attribute equal the name of 
    'the current form field.
-   objattID.Text = Request.Form.Key(x)
-   
-   'The setAttributeNode method will append the id attribute 
-   'to the field element.
-   objField.setAttributeNode objattID
+   objID.Text = Request.Form.Key(x)
    
    'Create another attribute, "taborder". This just orders the
    'elements
@@ -85,10 +78,9 @@ Function ConvertFormtoXML(strXMLFilePath, strFileName)
  'Release all of your object references.
  Set objDom = Nothing
  Set objRoot = Nothing
- Set objField = Nothing
- Set objFieldValue = Nothing
- Set objattID = Nothing
- Set objattTabOrder = Nothing
+ Set objPosition = Nothing
+ Set objDate = Nothing
+ Set objID = Nothing
  Set objPI = Nothing
 End Function
 
