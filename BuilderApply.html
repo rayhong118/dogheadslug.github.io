@@ -152,10 +152,23 @@
     }
 	
 	function submitForm(){
+		var xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
+		var fso = new ActiveXObject("Scripting.FileSystemObject");
+		//var FILENAME = 'D:\\IE Try\\PersonXML2.xml';
 		var appID = document.getElementById("AppID").value;
 		var appPosition = document.getElementById("AppPosition").value;
 		var appDate = document.getElementById("AppDate").value;
 		
-		alert(appPosition);
+		var file = fso.CreateTextFile('BuilderInfo.xml',false);
+		
+		file.WriteLine('<Application>');
+		file.WriteLine('<ID>'+appID+'</ID>');
+		file.WriteLine('<Position>'+appPosition+'</Position>');
+		file.WriteLine('<Date>'+appDate+'</Date>');
+		file.WriteLine('</Application>');
+		file.WriteLine('\n');
+		file.Close();
+		
+		alert("OK");
 	}
 </script>
