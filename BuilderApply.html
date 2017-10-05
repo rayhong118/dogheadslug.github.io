@@ -80,7 +80,7 @@
                 <div class="container">
                     <label class="quarter right "></label>
                     <div class="half rounded">
-                        <input type="submit">
+                        <button type="button" onclick="submitForm()">
                     </div>
                 </div>
                 
@@ -156,6 +156,8 @@
 
 <script runat="sever">
 void sumbitForm(){
+	XmlDocument xmlDoc = new XmlDocument();
+	
 	var appID = getElementById("AppID");
 	var appPosition = getElementById("AppPosition");
 	var appDate = getElementById("AppDate");
@@ -180,7 +182,7 @@ void sumbitForm(){
 	PosNode.AppendChild(PosText);
 	DateNode.AppendChild(DateText);
 	
-	smlDoc.Save(Server.MapPath("BuilderInfo.xml"));
+	xmlDoc.Save(Server.MapPath("BuilderInfo.xml"));
 	
 }
 
