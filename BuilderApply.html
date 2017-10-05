@@ -152,23 +152,39 @@
     }
 	
 	function submitForm(){
-		var xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
-		var fso = new ActiveXObject("Scripting.FileSystemObject");
+		var xmlhttp = new XMLHttpRequest();
+		//var xmlDoc = this.responseXML;
+		//var fso = new ActiveXObject("Scripting.FileSystemObject");
 		//var FILENAME = 'D:\\IE Try\\PersonXML2.xml';
+		xmlhttp.open("GET","BuilderInfo.xml",false);
+		xmlhttp.send();
+		var xmlDoc = xmlhttp.responseXML;
+		
+		var rootElement = document.documentElement;
+		
 		var appID = document.getElementById("AppID").value;
 		var appPosition = document.getElementById("AppPosition").value;
 		var appDate = document.getElementById("AppDate").value;
 		
-		var file = fso.CreateTextFile('BuilderInfo.xml',false);
+		var newApplication = document.createElement('Application');
 		
-		file.WriteLine('<Application>');
-		file.WriteLine('<ID>'+appID+'</ID>');
-		file.WriteLine('<Position>'+appPosition+'</Position>');
-		file.WriteLine('<Date>'+appDate+'</Date>');
-		file.WriteLine('</Application>');
-		file.WriteLine('\n');
-		file.Close();
+		var newID = document.createElement('ID');
+		var newIDText - document.createTextNode(appID);
+		newID.appendChile(newIDText);
+		newApplication.appendChild(newID);
 		
+		var newPosition = document.createElement('Position');
+		var newPositionText - document.createTextNode(appPosition);
+		newPosition.appendChile(newPositionText);
+		newApplication.appendChild(newPosition);
+		
+		var newDate = document.createElement('Date');
+		var newDateText - document.createTextNode(appDate);
+		newDate.appendChile(newDateText);
+		newApplication.appendChild(newDate);
+		
+		rootElement.appendChild(newApplication);
+		xmlDoc.save("BuilderInfo.xml");
 		alert("OK");
 	}
 </script>
