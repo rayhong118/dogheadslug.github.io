@@ -47,18 +47,18 @@
             考核日期需包含“/”。 例子：2017/09/15<br>
             </h6>
             
-            <form class = "center padded ">
+            <form class = "center padded " method="get" action="builderAppProcess.asp">
                 <div class="container">
                     <label class="quarter right">in-gameID <br>游戏内名字</label>
                     <div class="half">
-                    <input type="text" class="fill" id="ID">
+                    <input type="text" class="fill" id="AppID">
                     </div>
                 </div><br>
                 
                 <div class="container">
                     <label class="quarter right">You are applying for: <br>你申请的职位</label>
                     <div class="half">
-                    <select class="fill" id="Position">
+                    <select class="fill" id="AppPosition">
                         <option value="Probational Architect 见习建筑师">Probational Architect 见习建筑师</option>
                         <option value="Junior Architect 初级建筑师">Junior Architect 初级建筑师</option>
                         <option value="Medium-level Architect 中级建筑师">Medium-level Architect 中级建筑师</option>
@@ -73,7 +73,7 @@
                     <label class="quarter right">Test date (yyyy/mm/dd)
                     <br>考核日期（年/月/日）</label>
                     <div class="half">
-                    <input type="text" class="fill" id="Date">
+                    <input type="text" class="fill" id="AppDate">
                     </div>
                 </div><br>
                 
@@ -152,4 +152,36 @@
         }
         document.getElementById(type).innerHTML = table;
     }
+</script>
+
+<script runat="sever">
+void sumbitForm(){
+	var appID = getElementById("AppID");
+	var appPosition = getElementById("AppPosition");
+	var appDate = getElementById("AppDate");
+	
+	XmlElement rootnode = xmlDoc.CreateElement("Application");
+	
+	xmlDoc.DocumentElement.PrependChild(rootnode);
+	
+	XmlElement IDNode = xmlDoc.CreateElement("ID");
+	XmlElement PosNode = xmlDoc.CreateElement("Position");
+	XmlElement DateNode = xmlDoc.CreateElement("Date");
+	
+	XmlText IDText = xmlDoc.CreateTextNode();
+	XmlText PosText = xmlDoc.CreateTextNode();
+	XmlText DateText = xmlDoc.CreateTextNode();
+	
+	rootnode.AppendChild(IDNode);
+	rootnode.AppendChild(PosNode);
+	rootnode.AppendChild(DateNode);
+	
+	IDNode.AppendChild(IDText);
+	PosNode.AppendChild(PosText);
+	DateNode.AppendChild(DateText);
+	
+	smlDoc.Save(Server.MapPath("BuilderInfo.xml"));
+	
+}
+
 </script>
