@@ -121,7 +121,7 @@
 
     //it turned out that xml file name should be different from html file name
     
-    /*function loadXMLDoc(type) {
+    function loadXMLDoc(type) {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
@@ -149,14 +149,14 @@
             "</td></tr>";
         }
         document.getElementById(type).innerHTML = table;
-    }*/
+    }
 	
 	function submitForm(){
 		var xmlhttp = new XMLHttpRequest();
 		//var xmlDoc = this.responseXML;
 		//var fso = new ActiveXObject("Scripting.FileSystemObject");
 		//var FILENAME = 'D:\\IE Try\\PersonXML2.xml';
-		xmlhttp.open("GET","BuilderInfo.xml",false);
+		xmlhttp.open("GET","BuilderInfo.xml",true);
 		xmlhttp.send();
 		var xmlDoc = xmlhttp.responseXML;
 		
