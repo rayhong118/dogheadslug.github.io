@@ -1,0 +1,151 @@
+<html>
+    <head>
+        <title>Project Abandon</title>
+        <link href="stupid.css" rel="stylesheet" type="text/css"/>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <meta charset="utf-8">
+        <style>
+        body{
+            background-attachment: fixed;
+            //background-image: url("MC/backgroundday.jpg");
+            background-size: cover;
+            //background-color: 666666;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        #to-top {
+            position: fixed;
+            bottom: 5em;
+            right: 5em;
+        }
+
+        footer{
+            background-color: 666666;
+            background-position: center;
+
+        }
+
+        </style>
+    </head>
+     
+    <body>
+        <header class="container center padded blue">
+        <div class="threequarters padded">
+        <a href="index.html"><font color="white">Back to main page 回到主页</font></a>
+      
+        <h2 class="padded"><font>Project Abandon<br>‘放弃’计划</font></h2>
+        
+        </div>
+        </header>
+        <div class="padded container center aqua">
+        <div class="threequarters">
+            <a class="btn rounded navy" 
+            href="index.html"><h6>Home</h6></a>
+            <a class="btn rounded navy pulse" 
+                href="DC.html"><h6>DC</h6></a>
+            
+
+        </div>
+        </div>
+        
+        <div class="container center ">
+        <div class="threequarters silver center ">
+            <div class="padded"><h6>1.fuel efficiency 油耗</h6>
+            <br>convert "miles per gallon" to "liter per 100 kilometer"
+            <br>转换“英里每加仑”与“百公里油耗”</div>
+            <form class=" padded ">
+            miles per gallon<input type='text' id='MPG'/>
+            liter per 100 kilometer <input type='text' id='LPKM'/>
+            </form>
+            <div class="padded">
+            <h6>code abandoned</h6>
+            <pre>
+            /*
+            var abd1_mpg = document.getElementById('MPG'),
+                abd1_lpkm = document.getElementById('LPKM');
+
+            abd1_mpg.onchange = function(){
+                var tmp = 100.0/(abd1_mpg*1.60934/3.78541);
+                $('#LPKM').attr('value', tmp);
+            }
+
+            abd1_lpkm.onchange = function(){
+                var tmp = 100.0/(abd1_lpkm*1.60934/3.78541);
+                $('#MPG').attr('value', tmp);
+            }
+            */
+            /*
+            window.onload=function(){
+                var nameField = document.getElementById('nameField');
+                var lastNameValue = undefined;
+
+                updateNumberDisplay();
+                setInterval(updateNumberDisplay, 100);
+
+                function updateNumberDisplay(){
+                    var thisValue = nameField.value || "??";
+                    if (lastNameValue != thisValue) {
+                        document.getElementById('nameDisplay').innerHTML = lastNameValue = thisValue;
+                    }
+                }
+            };*/
+            </pre>
+            </div>
+        </div>
+        </div>
+        
+    </body>
+<script>
+
+//scroll top function
+$("a[href='#top']").click(function() {
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+    return false;
+});
+
+$("#MPG").keyup(function() {
+    var mpgin= $('#MPG').val();
+    var lpkmout = 100.0/(mpgin*1.60934/3.78541);
+    //mile/gallon km/l = mile/1.60934/3.78541
+    $('#LPKM').val(lpkmout);
+});
+
+$("#LPKM").keyup(function() {
+    var lpkmin= $('#LPKM').val();
+    var mpgout = 100.0/(lpkmin*1.60934/3.78541);
+    $('#MPG').val(mpgout);
+});
+
+/*
+var abd1_mpg = document.getElementById('MPG'),
+    abd1_lpkm = document.getElementById('LPKM');
+
+abd1_mpg.onchange = function(){
+    var tmp = 100.0/(abd1_mpg*1.60934/3.78541);
+    $('#LPKM').attr('value', tmp);
+}
+
+abd1_lpkm.onchange = function(){
+    var tmp = 100.0/(abd1_lpkm*1.60934/3.78541);
+    $('#MPG').attr('value', tmp);
+}
+*/
+/*window.onload=function(){
+    
+    var nameField = document.getElementById('nameField');
+    var lastNameValue = undefined;
+
+    updateNumberDisplay();
+    setInterval(updateNumberDisplay, 100);
+
+    function updateNumberDisplay(){
+        var thisValue = nameField.value || "??";
+        if (lastNameValue != thisValue) {
+            document.getElementById('nameDisplay').innerHTML = lastNameValue = thisValue;
+        }
+    }
+};*/
+
+</script>
