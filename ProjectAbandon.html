@@ -58,10 +58,12 @@
             <form class=" padded ">
 			<div class="container">
             <label class="quarter right">Miles per gallon 英里每加仑</label>
-			<div class="half"><input type='text' id='MPG'/></div></div>
+			<div class="half"><input type='text' id='MPG'/></div>
+			</div>
 			<div class="container">
             <label class="quarter right">Liter per 100 kilometer 百公里油耗</label>
-			<div class="half"><input type='text' id='LPKM'/></div></div>
+			<div class="half"><input type='text' id='LPKM'/></div>
+			</div>
             </form>
             <div class="padded">
             <h6>code abandoned</h6>
@@ -122,34 +124,6 @@ $("#LPKM").keyup(function() {
     $('#MPG').val(mpgout);
 });
 
-/*
-var abd1_mpg = document.getElementById('MPG'),
-    abd1_lpkm = document.getElementById('LPKM');
 
-abd1_mpg.onchange = function(){
-    var tmp = 100.0/(abd1_mpg*1.60934/3.78541);
-    $('#LPKM').attr('value', tmp);
-}
-
-abd1_lpkm.onchange = function(){
-    var tmp = 100.0/(abd1_lpkm*1.60934/3.78541);
-    $('#MPG').attr('value', tmp);
-}
-*/
-/*window.onload=function(){
-    
-    var nameField = document.getElementById('nameField');
-    var lastNameValue = undefined;
-
-    updateNumberDisplay();
-    setInterval(updateNumberDisplay, 100);
-
-    function updateNumberDisplay(){
-        var thisValue = nameField.value || "??";
-        if (lastNameValue != thisValue) {
-            document.getElementById('nameDisplay').innerHTML = lastNameValue = thisValue;
-        }
-    }
-};*/
 
 </script>
