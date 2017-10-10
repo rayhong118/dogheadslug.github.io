@@ -87,7 +87,7 @@
     function getComicList(xml){
         var i;
         var xmlDoc = xml.responseXML;
-        var table="<tr><td>list of all items v6</td></tr>";
+        var table="<tr><td><p>list of all items v8</p></td></tr>";
 		var x = xmlDoc.getElementsByTagName( 'Comics');
 		//if theres error msg said cannot find getElementsByTagName of null
 		//it means there is some errors in the XML file
@@ -95,9 +95,11 @@
 		if (x.length == 0)alert("nothing is here");
 		if (x.length == 1)alert("only one item???");
         for (i = 0; i <x.length; i++) { 
-            table += "<tr><td>" +
-            x[i].getElementsByTagName("Title")[0].childNodes[0].nodeValue +
-            "</td></tr>";
+            table += "<tr><td><a onclick=testlog()><p>" +
+            x[i].getElementsByTagName("Date")[0].childNodes[0].nodeValue +
+			" " +
+			x[i].getElementsByTagName("Title")[0].childNodes[0].nodeValue +
+            "<p></a></td></tr>";
         }
         document.getElementById("comics_list").innerHTML = table;
     }
