@@ -1,4 +1,5 @@
 <?xml version="1.0" ?>
+<root>
 <Comics>
 <Date>2019 99 99 </Date>
 <Title>Title 1 </Title>
@@ -17,3 +18,4 @@
 <Random>
 <nothing></nothing>
 </Random>
+</root>
