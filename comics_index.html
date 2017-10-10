@@ -12,6 +12,15 @@
                 position: fixed;
                 bottom: 5em;
                 right: 5em;
+				width: 5em;
+				
+            }
+			
+			#content {
+                position: fixed;
+                bottom: 10em;
+                right: 5em;
+				width: 5em;
             }
         </style>
     </head>
@@ -40,7 +49,7 @@
         </div>
         
         <a class="btn glass padded" id="top" ><i class="fa fa-angle-double-up fa-3x"></i></a>
-        
+        <a class="btn glass padded" id="content" ><i class="fa fa-picture-o fa-2x" ></i></a>
         
         <div class="container center padded">
         <div class="container center threequarters">
@@ -51,10 +60,11 @@
                 </div>
             </div>
             
-            <div class=" padded twothirds">
+            <div class=" padded twothirds" id="mainpanel">
                 <p class= "padded silver">v0.9</p>
                 <button type="button" onclick="loadXMLDoc()">Get comics List</button>
-                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <br><br>
+				<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
             </div>
             
         </div>
@@ -70,6 +80,12 @@
     $("#top").click(function() {
         $("html, body").animate({ scrollTop: 0 }, "slow");
     });
+	
+	$("#content").click(function() {
+		$("html, body").animate({
+		scrollTop:   $("#mainpanel").offset().top}, "slow");
+	});
+
     
     function loadXMLDoc() {
         var xmlhttp = new XMLHttpRequest();
