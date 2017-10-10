@@ -70,11 +70,11 @@
 		$("html, body").animate({ scrollTop: 0 }, "slow");
 	});
 	
-    function loadXMLDoc(type) {
+    function loadXMLDoc() {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                getDataSet(this,type);
+                getComicList(this);
             }
             //else alert("database not ready yet!");
         };
