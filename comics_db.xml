@@ -1,5 +1,11 @@
-<?xml version="1.0" ?>
-<Comics>
-<Date>2019 99 99 </Date>
-<Title>Title 1 </Title>
-</Comics>
+<CATALOG>
+  <Comics>
+  <Date>2019 99 99 </Date>
+  <Title>Title 1 </Title>
+  </Comics>
+
+  <Comics>
+  <Date>2019 94 99 </Date>
+  <Title>Title 2 </Title>
+  </Comics>
+</CATALOG>
