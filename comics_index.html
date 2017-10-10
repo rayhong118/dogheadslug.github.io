@@ -88,17 +88,17 @@
         var i;
         var xmlDoc = xml.responseXML;
         var tagname = 'comics';
-        var x = xmlDoc.getElementsByTagName( "comics");
+        //var x = xmlDoc.getElementsByTagName( "comics");
 		//if theres error msg said cannot find getElementsByTagName of null
 		//it means there is some errors in the XML file
         var table="<tr>list of all items</tr>";
         for (i = 0; i <x.length; i++) { 
             table += "<tr><a onclick=getComicsMain(" +
-            x[i].getElementsByTagName("Date")[0].childNodes[0].nodeValue +
+            xmlDoc.getElementsByTagName("Date")[0].childNodes[0].nodeValue +
             ")> " +
-            x[i].getElementsByTagName("Date")[0].childNodes[0].nodeValue +
+            xmlDoc.getElementsByTagName("Date")[0].childNodes[0].nodeValue +
             " " +
-            x[i].getElementsByTagName("Title")[0].childNodes[0].nodeValue +
+            xmlDoc.getElementsByTagName("Title")[0].childNodes[0].nodeValue +
             "</a></tr>";
         }
         document.getElementById("comics_list").innerHTML = table;
