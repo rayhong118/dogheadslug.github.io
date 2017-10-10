@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
     <head>
         <title>Doghead comics</title>
         <link href="stupid.css" rel="stylesheet" type="text/css"/>
@@ -88,7 +88,9 @@
         var i;
         var xmlDoc = xml.responseXML;
         var tagname = 'comics';
-        var x = xmlDoc.getElementsByTagName(tagname);
+        var x = xmlDoc.getElementsByTagName( "comics");
+		//if theres error msg said cannot find getElementsByTagName of null
+		//it means there is some errors in the XML file
         var table;
         for (i = 0; i <x.length; i++) { 
             table += "<tr><a onclick=getComicsMain(" +
