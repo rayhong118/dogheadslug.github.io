@@ -87,7 +87,7 @@
 	function getComicList(xml){
 		var i;
         var xmlDoc = xml.responseXML;
-		var x = xmlDoc.getElementsByTagName("comics");
+		var x = xmlDoc.getElementsByTagName('comics');
 		for (i = 0; i <x.length; i++) { 
             table += "<tr><a onclick=getComicsMain(" +
             x[i].getElementsByTagName("Date")[0].childNodes[0].nodeValue +
