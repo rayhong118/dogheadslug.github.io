@@ -220,11 +220,13 @@
     </body>
 <script>
 //scroll top function
+//scroll top function
+//not sure what went wrong but it's not working with my chrome
+//but all the other browsers are working fine with it
 $("a[href='#top']").click(function() {
   $("html, body").animate({ scrollTop: 0 }, "slow");
   return false;
 });
-
 function showMap(src){
     var img = document.getElementById("map_slot");
     img.src = "MC/"+src;
