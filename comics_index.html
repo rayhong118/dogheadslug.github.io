@@ -46,12 +46,13 @@
         <div class="container center threequarters">
         
             <div class=" padded third">
-                <p class="padded silver">file pic</p>
+                <div class="padded silver">
                 <table id="comics_list"  class="center fill"></table>
+				</div>
             </div>
             
             <div class=" padded twothirds">
-                <p class="padded silver">asdf</p>
+                <p class="padded silver">v0.9</p>
                 <button type="button" onclick="loadXMLDoc()">Get comics List</button>
                 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
             </div>
@@ -87,13 +88,14 @@
     function getComicList(xml){
         var i;
         var xmlDoc = xml.responseXML;
-        var table="<tr><td><p>list of all items v8</p></td></tr>";
+        var table="<tr><td><p>list of all comics</p></td></tr>";
 		var x = xmlDoc.getElementsByTagName( 'Comics');
 		//if theres error msg said cannot find getElementsByTagName of null
 		//it means there is some errors in the XML file
         
 		if (x.length == 0)alert("nothing is here");
 		if (x.length == 1)alert("only one item???");
+		
         for (i = 0; i <x.length; i++) { 
             table += "<tr><td><a onclick=testlog()><p>" +
             x[i].getElementsByTagName("Date")[0].childNodes[0].nodeValue +
