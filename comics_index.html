@@ -4,10 +4,11 @@
         <link href="stupid.css" rel="stylesheet" type="text/css"/>
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" 
         rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <meta charset="utf-8">
         <style>
         
-            #to-top {
+            #top {
                 position: fixed;
                 bottom: 5em;
                 right: 5em;
@@ -27,23 +28,99 @@
 	    <div class="threequarters">
             <a class="btn rounded navy" 
             href="index.html"><h6>Home</h6></a>
-            <a class="btn rounded navy pulse" 
+            <a class="btn rounded navy" 
             href="comics_index.html"><h6>Doghead comics</h6></a>
-            <a class="btn rounded navy" 
+            <a class="btn rounded white" 
             href="raccoon_comics.html"><h6>Raccoon comics</h6></a>
-            <a class="btn rounded navy" 
+            <a class="btn rounded white" 
             href="gallery_armored.html"><h6>gallery</h6></a>
-            <a class="btn rounded navy" 
+            <a class="btn rounded white" 
             href="makeMoney.html"><h6>JS</h6></a>
 	    </div>
 	    </div>
-        <a class="btn glass padded" id="to-top" onclick="goTop()" ><i class="fa fa-angle-double-up fa-5x"></i></a>
-    
-
+		
+        <a class="btn glass padded" id="top" ><i class="fa fa-angle-double-up fa-5x"></i></a>
+		
+		
+		<div class="container center padded">
+		<div class="container center threequarters">
+		
+			<div class=" padded third">
+				<p class="padded silver">file pic</p>
+				<table id="comics_list"  class="center fill"></table>
+			</div>
+			
+			<div class=" padded twothirds">
+				<p class="padded silver">asdf</p>
+				<button type="button" onclick="loadXMLDoc()">Get comics List</button>
+				<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+			</div>
+			
+		</div>
+		</div>
+		
+		
+		
+	</body>
 
     
 <script>
-  function goTop(){
-    scroll(0,0);
-  }
+
+	$("#top").click(function() {
+		$("html, body").animate({ scrollTop: 0 }, "slow");
+	});
+	
+    function loadXMLDoc(type) {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                getDataSet(this,type);
+            }
+            //else alert("database not ready yet!");
+        };
+        xmlhttp.open("GET", "comics_db.xml", true);//get data from database
+        xmlhttp.send();
+    }
+	
+	//1. on page load, get the list of all comics from xml database.
+	//show date and title of each item
+	function getComicList(xml){
+		var i;
+        var xmlDoc = xml.responseXML;
+		var x = xmlDoc.getElementsByTagName("comics");
+		for (i = 0; i <x.length; i++) { 
+            table += "<tr><a onclick=getComicsMain(" +
+            x[i].getElementsByTagName("Date")[0].childNodes[0].nodeValue +
+            ")> " +
+			x[i].getElementsByTagName("Date")[0].childNodes[0].nodeValue +
+			" " +
+            x[i].getElementsByTagName("Title")[0].childNodes[0].nodeValue +
+            "</a></tr>";
+        }
+        document.getElementById("comics_list").innerHTML = table;
+	}
+
+	//2. on page load, the comics panel shows the latest comics
+	function getLatestIndex(){
+	}
+
+	//then load the image, title, date and discription
+	function getComicsMain(){
+	}
+
+	//3. when the content in the main comics panel is updated, 
+	//show the mini icon, date and title of the previous and next
+	//item as well as tje current one below the main panel
+	function prepareNext(){
+	}
+
+	function preparePrev(){
+	}
+
+	//note: if the next of prev do not exist, leave it blank
+	//or show "this is the last/first one" 
+
+
+
+
 </script>
