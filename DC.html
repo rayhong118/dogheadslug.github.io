@@ -14,7 +14,7 @@
             background-position: center;
         }
         
-        #to-top {
+        #top {
             position: fixed;
             bottom: 5em;
             right: 5em;
@@ -137,9 +137,9 @@
                     
                     <h6 class="padded glass rounded"><font color=333333>
                     Doghead9
-					<br>
+                    <br>
                     <br>Construction team leader
-					<br>建筑组组长。青年一个狗。
+                    <br>建筑组组长。青年一个狗。
                     
                     
                     <br>
@@ -147,23 +147,24 @@
                     <br><br><br><br><br><br><br><br><br>
                     </font></h6>
                 </div>
-				
-				<br>
-				<div class="third center"><br><img class="padded" src="MC/candytoss.jpg"></img></div>
+                
+                <br>
+                <!--div class="third center"><br><img class="padded" src="MC/candytoss.jpg"></img></div>
                 <div class="twothirds">
                     
                     <h6 class="padded glass rounded"><font color=333333>
                     Candytoss
-					<br>
+                    <br>
                     <br>Construction team reserve member
-					<br>储备组员。暂时只在建筑仓库活动。
+                    <br>储备组员。暂时只在建筑仓库活动。
                     
                     
                     <br>
                     
                     <br><br><br><br><br><br><br><br><br>
                     </font></h6>
-                </div>
+                    
+                </div-->
             </div>
             </div>
         </div>
@@ -215,20 +216,20 @@
         </div>
         </footer>
         
+        <a class="btn glass padded" id="top" ><i class="fa fa-angle-double-up fa-3x"></i></a>
         
-        <a class="btn glass padded" id="to-top" href='#top' ><i class="fa fa-angle-double-up fa-4x"></i></a>
     </body>
 <script>
-//scroll top function
-//scroll top function
-//not sure what went wrong but it's not working with my chrome
-//but all the other browsers are working fine with it
-$("a[href='#top']").click(function() {
-  $("html, body").animate({ scrollTop: 0 }, "slow");
-  return false;
-});
-function showMap(src){
-    var img = document.getElementById("map_slot");
-    img.src = "MC/"+src;
-}
+    //scroll top function
+    //not sure what went wrong but it's not working with my chrome
+    //but all the other browsers are working fine with it
+    $("#top").click(function() {
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+    });
+
+    function showMap(src){
+        var img = document.getElementById("map_slot");
+        img.src = "MC/"+src;
+    }
+
 </script>
