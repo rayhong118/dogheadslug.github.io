@@ -87,10 +87,10 @@
     function getComicList(xml){
         var i;
         var xmlDoc = xml.responseXML;
-        var x = xmlDoc.getElementsByTagName( "comics");
+        var x = xmlDoc.getElementsByTagName( 'Comics');
 		//if theres error msg said cannot find getElementsByTagName of null
 		//it means there is some errors in the XML file
-        var table="<tr>list of all items v3</tr>";
+        var table="<tr>list of all items v4</tr>";
 		if (x.length == 0)alert("nothing is here");
         for (i = 0; i <x.length; i++) { 
             table += "<tr>" +
