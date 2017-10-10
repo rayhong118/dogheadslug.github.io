@@ -1,5 +1,6 @@
 <CATALOG>
 <Comics>
+<Index>1</Index>
 <Date>October 10, 2014 </Date>
 <Title>Doghead slug  </Title>
 <Src></Src>
@@ -7,6 +8,7 @@
 </Comics>
 
 <Comics>
+<Index>2</Index>
 <Date>2019 99 99 </Date>
 <Title>Title  </Title>
 <Img></Img>
@@ -14,6 +16,7 @@
 </Comics>
 
 <Comics>
+<Index>3</Index>
 <Date>2019 99 99 </Date>
 <Title>Title  </Title>
 <Img></Img>
