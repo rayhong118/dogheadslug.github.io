@@ -90,7 +90,8 @@
         var x = xmlDoc.getElementsByTagName( "comics");
 		//if theres error msg said cannot find getElementsByTagName of null
 		//it means there is some errors in the XML file
-        var table="<tr>list of all items v2</tr>";
+        var table="<tr>list of all items v3</tr>";
+		if (x.length == 0)alert("nothing is here");
         for (i = 0; i <x.length; i++) { 
             table += "<tr>" +
             x[i].getElementsByTagName("Title")[0].childNodes[0].nodeValue +
