@@ -12,15 +12,15 @@
                 position: fixed;
                 bottom: 5em;
                 right: 5em;
-				width: 5em;
-				
+                width: 5em;
+                
             }
-			
-			#content {
+            
+            #content {
                 position: fixed;
                 bottom: 10em;
                 right: 5em;
-				width: 5em;
+                width: 5em;
             }
         </style>
     </head>
@@ -56,7 +56,7 @@
         
             <div class=" padded third">
                 <div class="silver center fill">
-                <table id="comics_list" ></table>
+                <table id="comics_list"  ></table>
                 </div>
             </div>
             
@@ -64,8 +64,8 @@
                 <p class= "padded silver">v0.10</p>
                 <button type="button" onclick="loadXMLDoc()">Get comics List</button>
                 <br><br>
-				
-				<br><br><br><br><br><br>
+                
+                <br><br><br><br><br><br>
             </div>
             
         </div>
@@ -81,12 +81,14 @@
     $("#top").click(function() {
         $("html, body").animate({ scrollTop: 0 }, "slow");
     });
-	
-	$("#content").click(function() {
-		$("html, body").animate({
-		scrollTop:   $("#mainpanel").offset().top}, "slow");
-	});
-
+    
+    $("#content").click(function() {
+        $("html, body").animate({
+        scrollTop:   $("#mainpanel").offset().top}, "slow");
+    });
+    
+    var currComicsIndex = 0;
+    var maxComicsIndex = 0;
     
     function loadXMLDoc() {
         var xmlhttp = new XMLHttpRequest();
@@ -115,8 +117,8 @@
         
         for (i = 0; i <x.length; i++) { 
             table += "<tr class='glass'><td align='left'><button onclick=testlog("+
-			i +
-			") class='fill white'><font color='black'>" +
+            i +
+            ") class='fill white'><font color='black'>" +
             x[i].getElementsByTagName("Date")[0].childNodes[0].nodeValue +
             "  " +
             x[i].getElementsByTagName("Title")[0].childNodes[0].nodeValue +
@@ -124,10 +126,10 @@
         }
         document.getElementById("comics_list").innerHTML = table;
     }
-	
-	function testlog(indexOfComics){
-		console.log("index is:"+indexOfComics);
-	}
+    
+    function testlog(indexOfComics){
+        console.log("index is:"+indexOfComics);
+    }
     //2. on page load, the comics panel shows the latest comics
     function getLatestIndex(){
     }
