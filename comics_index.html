@@ -61,7 +61,7 @@
             </div>
             
             <div class=" padded twothirds" id="mainpanel">
-                <p class= "padded silver">v0.9</p>
+                <p class= "padded silver">v0.10</p>
                 <button type="button" onclick="loadXMLDoc()">Get comics List</button>
                 <br><br>
 				
@@ -114,11 +114,11 @@
         if (x.length == 1)alert("only one item???");
         
         for (i = 0; i <x.length; i++) { 
-            table += "<tr class='glass'><td><a onclick=testlog()><font color='black'>" +
+            table += "<tr class='glass'><td><button onclick=testlog()><font color='black'>" +
             x[i].getElementsByTagName("Date")[0].childNodes[0].nodeValue +
-            " " +
+            "  " +
             x[i].getElementsByTagName("Title")[0].childNodes[0].nodeValue +
-            "<font></a></td></tr>";
+            "<font></button></td></tr>";
         }
         document.getElementById("comics_list").innerHTML = table;
     }
