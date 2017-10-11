@@ -55,7 +55,7 @@
         <div class="container center threequarters">
         
             <div class=" padded third">
-                <div class="silver">
+                <div class="silver center fill">
                 <table id="comics_list" ></table>
                 </div>
             </div>
@@ -65,7 +65,7 @@
                 <button type="button" onclick="loadXMLDoc()">Get comics List</button>
                 <br><br>
 				
-				<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+				<br><br><br><br><br><br>
             </div>
             
         </div>
@@ -114,7 +114,9 @@
         if (x.length == 1)alert("only one item???");
         
         for (i = 0; i <x.length; i++) { 
-            table += "<tr class='glass'><td align='left'><button onclick=testlog() class='fill white'><font color='black'>" +
+            table += "<tr class='glass'><td align='left'><button onclick=testlog("+
+			i +
+			") class='fill white'><font color='black'>" +
             x[i].getElementsByTagName("Date")[0].childNodes[0].nodeValue +
             "  " +
             x[i].getElementsByTagName("Title")[0].childNodes[0].nodeValue +
