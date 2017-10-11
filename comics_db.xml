@@ -1,6 +1,15 @@
 <CATALOG>
+
 <Comics>
 <Index>1</Index>
+<Date> N/A </Date>
+<Title>Surprise</Title>
+<Src>comics/date_na01.jpg</Src>
+<Desc>Just some boring shit</Desc>
+</Comics>
+
+<Comics>
+<Index>2</Index>
 <Date>October 10, 2014 </Date>
 <Title>Doghead slug  </Title>
 <Src></Src>
