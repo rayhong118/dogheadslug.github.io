@@ -2,9 +2,9 @@
 
 <Comics>
 <Index>1</Index>
-<Date> N/A </Date>
+<Date>Date N/A </Date>
 <Title>Surprise</Title>
-<Src>comics/date_na01.jpg</Src>
+<Src>date_na01.jpg</Src>
 <Desc>Just some boring shit</Desc>
 </Comics>
 
@@ -12,23 +12,74 @@
 <Index>2</Index>
 <Date>October 10, 2014 </Date>
 <Title>Doghead slug  </Title>
-<Src></Src>
+<Src>c141029.jpg</Src>
 <Desc>Sammy the slug and doghead slug</Desc>
 </Comics>
 
 <Comics>
-<Index>2</Index>
-<Date>2019 99 99 </Date>
-<Title>Title  </Title>
-<Img></Img>
-<Desc></Desc>
+<Index>3</Index>
+<Date>November 25, 2015 </Date>
+<Title>Thanksbombing Day  </Title>
+<Src>c151125.jpg</Src>
+<Desc>Thanksbombing day. Chairman Mao lost his mind after this.</Desc>
 </Comics>
 
 <Comics>
-<Index>3</Index>
-<Date>2019 99 99 </Date>
-<Title>Title  </Title>
-<Img></Img>
-<Desc></Desc>
+<Index>4</Index>
+<Date>January 5, 2016 </Date>
+<Title>James's legend 1</Title>
+<Src>c160105.jpg</Src>
+<Desc>My friend James got off the vehicle and tried to lift the bar.</Desc>
 </Comics>
+
+<Comics>
+<Index>5</Index>
+<Date>March 27, 2016 </Date>
+<Title>James's legend 2</Title>
+<Src>c160327.jpg</Src>
+<Desc>My friend James would like to turn himself in while we are looking for a hotel in Salt Lake City</Desc>
+</Comics>
+
+<Comics>
+<Index>6</Index>
+<Date>September 16, 2016 </Date>
+<Title>Find the button</Title>
+<Src>c160916p1.jpg</Src>
+<Desc>Ah, here it is!</Desc>
+</Comics>
+
+<Comics>
+<Index>7</Index>
+<Date>September 16, 2016 </Date>
+<Title>Waterproof</Title>
+<Src>c160916p2.jpg</Src>
+<Desc>Don't worry, i got my waterproof hoodie.</Desc>
+</Comics>
+
+<Comics>
+<Index>8</Index>
+<Date>September 29, 2016 </Date>
+<Title>Chips at library</Title>
+<Src>c160929.jpg</Src>
+<Desc>It's so crispy and loud!</Desc>
+</Comics>
+
+<Comics>
+<Index>9</Index>
+<Date>October 19, 2016 </Date>
+<Title>Tools</Title>
+<Src>c161019.jpg</Src>
+<Desc>Normal, elite and insane professors.</Desc>
+</Comics>
+
+<Comics>
+<Index>10</Index>
+<Date>November 19, 2016 </Date>
+<Title>San Diego</Title>
+<Src>c161119.jpg</Src>
+<Desc>Gonna fly there.</Desc>
+</Comics>
+
+
+
 </CATALOG>
