@@ -61,7 +61,7 @@
             </div>
             
             <div class=" padded twothirds" id="mainpanel">
-                <p class= "padded silver">v0.11</p>
+                <p class= "padded silver">v0.12</p>
                 <button type="button" onclick="loadXMLDoc()">Get comics List</button>
 				<div id="mainPanel"></div>
                 <br><br>
@@ -137,7 +137,11 @@
 				var comicsArray = xmlDoc.getElementsByTagName("Comics");
 				var mainPanel = "<h5 class='center'>" +
 				comicsArray[indexOfComics].getElementsByTagName("Title")[0].childNodes[0].nodeValue +
-				"</h5>";
+				"</h5><img src='/comics/"+
+				comicsArray[indexOfComics].getElementsByTagName("Src")[0].childNodes[0].nodeValue +
+				"'></img><br><h6>" + 
+				comicsArray[indexOfComics].getElementsByTagName("Desc")[0].childNodes[0].nodeValue +
+				"</h6>";
 				 document.getElementById("mainPanel").innerHTML = mainPanel;
             }
             //else alert("database not ready yet!");
