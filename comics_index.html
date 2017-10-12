@@ -61,7 +61,7 @@
             </div>
             
             <div class=" padded twothirds" id="mainpanel">
-                <p class= "padded silver">v0.12</p>
+                <p class= "padded silver">v0.12.1</p>
                 <button type="button" onclick="loadXMLDoc()">Get comics List</button>
 				<div id="mainPanel"></div>
                 <br><br>
@@ -148,6 +148,10 @@
         };
         xmlhttp.open("GET", "comics_db.xml", true);//get data from database
         xmlhttp.send();
+		
+		//scroll to image position
+		$("html, body").animate({
+        scrollTop:   $("#mainpanel").offset().top}, "slow");
     }
 
     //3. when the content in the main comics panel is updated, 
