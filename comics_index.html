@@ -61,9 +61,9 @@
             </div>
             
             <div class=" padded twothirds" id="mainpanel">
-                <p class= "padded silver">v0.12.1</p>
+                <p class= "padded silver">v0.12.2</p>
                 <button type="button" onclick="loadXMLDoc()">Get comics List</button>
-				<div id="mainPanel"></div>
+				<div id="mainPanel" class="center"></div>
                 <br><br>
                 
                 <br><br><br><br><br><br>
@@ -135,7 +135,7 @@
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 var xmlDoc = xmlhttp.responseXML;
 				var comicsArray = xmlDoc.getElementsByTagName("Comics");
-				var mainPanel = "<h5 class='center'>" +
+				var mainPanel = "<h5>" +
 				comicsArray[indexOfComics].getElementsByTagName("Title")[0].childNodes[0].nodeValue +
 				"</h5><img src='/comics/"+
 				comicsArray[indexOfComics].getElementsByTagName("Src")[0].childNodes[0].nodeValue +
