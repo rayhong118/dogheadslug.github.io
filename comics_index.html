@@ -61,7 +61,7 @@
             </div>
             
             <div class=" padded twothirds" id="mainpanel">
-                <p class= "padded silver">v0.12.2</p>
+                <p class= "padded silver">v0.12.3</p>
                 <button type="button" onclick="loadXMLDoc()">Get comics List</button>
 				<div id="mainPanel" class="center"></div>
                 <br><br>
@@ -112,7 +112,7 @@
         var x = xmlDoc.getElementsByTagName( 'Comics');
         
 		maxComicsIndex=x.length-1;
-        for (i = 0; i <x.length; i++) { 
+        for (i = x.length-1; i >0; i++) { 
             table += "<tr class='glass'><td align='left'><button onclick=getComicsMain("+
             i +
             ") class='fill white'><font color='black'>" +
@@ -130,6 +130,7 @@
 
     //then load the image, title, date and discription
     function getComicsMain(indexOfComics){
+		currComicsIndex = indexOfComics;
 		var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -157,10 +158,10 @@
     //3. when the content in the main comics panel is updated, 
     //show the mini icon, date and title of the previous and next
     //item as well as tje current one below the main panel
-    function prepareNext(){
+    function getNextComic(){
     }
 
-    function preparePrev(){
+    function getPrevComic(){
     }
 
     //note: if the next of prev do not exist, leave it blank
