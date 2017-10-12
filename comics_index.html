@@ -63,6 +63,7 @@
             <div class=" padded twothirds" id="mainpanel">
                 <p class= "padded silver">v0.10</p>
                 <button type="button" onclick="loadXMLDoc()">Get comics List</button>
+				<div id="mainPanel"></div>
                 <br><br>
                 
                 <br><br><br><br><br><br>
@@ -109,14 +110,10 @@
         var xmlDoc = xml.responseXML;
         var table="<tr><td><p>list of all comics</p></td></tr>";
         var x = xmlDoc.getElementsByTagName( 'Comics');
-        //if theres error msg said cannot find getElementsByTagName of null
-        //it means there is some errors in the XML file
         
-        if (x.length == 0)alert("nothing is here");
-        if (x.length == 1)alert("only one item???");
-        
+		maxComicsIndex=x.length-1;
         for (i = 0; i <x.length; i++) { 
-            table += "<tr class='glass'><td align='left'><button onclick=testlog("+
+            table += "<tr class='glass'><td align='left'><button onclick=getComicsMain("+
             i +
             ") class='fill white'><font color='black'>" +
             x[i].getElementsByTagName("Date")[0].childNodes[0].nodeValue +
@@ -127,15 +124,26 @@
         document.getElementById("comics_list").innerHTML = table;
     }
     
-    function testlog(indexOfComics){
-        console.log("index is:"+indexOfComics);
-    }
     //2. on page load, the comics panel shows the latest comics
     function getLatestIndex(){
     }
 
     //then load the image, title, date and discription
-    function getComicsMain(){
+    function getComicsMain(indexOfComics){
+		var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                var xmlDoc = xmlhttp.responseXML;
+				var comicsArray = xmlDoc.getElementsByTagName("Comics");
+				var mainPanel = "<h5 class='center'>" +
+				comicsArray[indexOfComics].getElementsByTagName("Title")[0].childNodes[0].nodeValue +
+				"</h5>";
+				 document.getElementById("mainPanel").innerHTML = mainPanel;
+            }
+            //else alert("database not ready yet!");
+        };
+        xmlhttp.open("GET", "comics_db.xml", true);//get data from database
+        xmlhttp.send();
     }
 
     //3. when the content in the main comics panel is updated, 
