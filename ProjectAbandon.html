@@ -55,16 +55,16 @@
             <div class="padded"><h6>1.Fuel efficiency 油耗</h6>
             <br>Convert "miles per gallon" to "liter per 100 kilometer"
             <br>转换“英里每加仑”与“百公里油耗”
-			</div>
+            </div>
             <form class=" padded ">
-			<div class="container">
+            <div class="container">
             <label class="quarter right">Miles per gallon 英里每加仑</label>
-			<div class="half"><input type='text' id='MPG'/></div>
-			</div>
-			<div class="container">
+            <div class="half"><input type='text' id='MPG'/></div>
+            </div>
+            <div class="container">
             <label class="quarter right">Liter per 100 kilometer 百公里油耗</label>
-			<div class="half"><input type='text' id='LPKM'/></div>
-			</div>
+            <div class="half"><input type='text' id='LPKM'/></div>
+            </div>
             </form>
             <div class="padded">
             <h6>code abandoned</h6>
@@ -100,33 +100,33 @@
             };*/
             </pre>
             </div>
-			
-			<div class="padded"><h6>2.Height conversion 身高转换</h6>
+            
+            <div class="padded"><h6>2.Height conversion 身高转换</h6>
             <br>Convert "centimeter" to "feet inch"
             <br>转换“厘米”与“英尺英寸”
-			<br>-“How tall are you?” -"173cm" -"?????" 
-			</div>
+            <br>-“How tall are you?” -"173cm" -"?????" 
+            </div>
             <form class=" padded ">
-			<div class="container">
+            <div class="container">
             <label class="quarter right">Centimeter 厘米</label>
-			<div class="half"><input type='text' id='cm'/></div>
-			</div>
-			
-			<br>
-			
-			<div class="container">
+            <div class="half"><input type='text' id='cm'/></div>
+            </div>
+            
+            <br>
+            
+            <div class="container">
             <label class="quarter right">Feet 英尺</label>
-			<div class="half"><input type='text' id='ft'/></div>
-			</div>
-			<div class="container">
+            <div class="half"><input type='text' id='ft'/></div>
+            </div>
+            <div class="container">
             <label class="quarter right">Inch 英尺</label>
-			<div class="half"><input type='text' id='in'/></div>
-			</div>
+            <div class="half"><input type='text' id='in'/></div>
+            </div>
             </form>
-			
+            
             <div class="padded">
             <h6>code abandoned</h6>
-			<pre>nothing</pre>
+            <pre>nothing</pre>
             <pre>
             
             </pre>
@@ -134,15 +134,15 @@
         </div>
         </div>
         
-		<br>
-		
-		<footer class= "padded gray">
-		<p class= "padded">last updated: 11:16 PM Thursday, October 12, 2017 (PDT)
-		<br><a href="https://github.com/dogheadslug"><font color="black"><i class="fa fa-github" aria-hidden="true"></i>
-		GitHub: dogheadslug</font></a>
-		</p>
+        <br>
+        
+        <footer class= "padded gray">
+        <p class= "padded">last updated: 11:16 PM Thursday, October 12, 2017 (PDT)
+        <br><a href="https://github.com/dogheadslug"><font color="black"><i class="fa fa-github" aria-hidden="true"></i>
+        GitHub: dogheadslug</font></a>
+        </p>
         </footer>
-		
+        
     </body>
 <script>
 
@@ -170,9 +170,9 @@ $("#LPKM").keyup(function() {
 $("#cm").keyup(function() {
     var cmin= $('#cm').val();
     var feetout = parseInt(cmin/30.48);
-	var inchout = Math.round((cmin%30.48)/2.54);
+    var inchout = Math.round((cmin%30.48)/2.54);
     $('#ft').val(feetout);
-	$('#in').val(inchout);
+    $('#in').val(inchout);
 });
 
 $("#ft").keyup(function() {
