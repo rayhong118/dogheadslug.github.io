@@ -136,9 +136,9 @@
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 var xmlDoc = xmlhttp.responseXML;
                 var comicsArray = xmlDoc.getElementsByTagName("Comics");
-                var mainPanel = "<h5><a class='button' onclick='getPrevComic()'><i class='fa fa-arrow-left'></i> Older </a>    " +
+                var mainPanel = "<h5><button onclick='getPrevComic()'><i class='fa fa-arrow-left'></i> Older </button>          " +
                 comicsArray[indexOfComics].getElementsByTagName("Title")[0].childNodes[0].nodeValue +
-                "    <a class='button' onclick='getNextComic()'>Newer <i class='fa fa-arrow-right'></i></a></h5><br><img src='/comics/"+
+                "          <button onclick='getNextComic()'>Newer <i class='fa fa-arrow-right'></i></button></h5><br><img src='/comics/"+
                 comicsArray[indexOfComics].getElementsByTagName("Src")[0].childNodes[0].nodeValue +
                 "'></img><br><h6>" + 
                 comicsArray[indexOfComics].getElementsByTagName("Desc")[0].childNodes[0].nodeValue +
