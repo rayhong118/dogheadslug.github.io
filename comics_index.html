@@ -56,12 +56,12 @@
         <div class="container center threequarters">
         
             <div class=" padded third">
-                <div class="silver center fill">
+                <div class="gray center fill">
                 <table id="comics_list"  class="center"></table>
                 </div>
             </div>
             
-            <div class=" padded twothirds" id="mainpanel">
+            <div class=" padded twothirds silver" id="mainpanel">
                 
                 <!--button type="button" onclick="loadXMLDoc()">Get comics List</button-->
                 <div id="mainPanel" class="center"></div>
@@ -74,7 +74,7 @@
         </div>
         
         <footer class= "padded gray">
-            <p class= "padded">current version: v0.16.5
+            <p class= "padded">current version: v0.16.6
             <br><a href="https://github.com/dogheadslug"><font color="black"><i class="fa fa-github" aria-hidden="true"></i>
             GitHub: dogheadslug</font></a>
 			</p>
@@ -151,15 +151,15 @@
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 var xmlDoc = xmlhttp.responseXML;
                 var comicsArray = xmlDoc.getElementsByTagName("Comics");
-                var mainPanel = "<button onclick='getPrevComic()'><i class='fa fa-arrow-left'></i> Older </button>" +
-                "<button onclick='getNextComic()'> Newer <i class='fa fa-arrow-right'></i></button><h5>" +
+                var mainPanel = "<button class='glass' onclick='getPrevComic()'><i class='fa fa-arrow-left'></i> Older </button>" +
+                "<button class='glass' onclick='getNextComic()'> Newer <i class='fa fa-arrow-right'></i></button><h5>" +
                 comicsArray[indexOfComics].getElementsByTagName("Title")[0].childNodes[0].nodeValue +
                 "</h5><br><img src='/comics/"+
                 comicsArray[indexOfComics].getElementsByTagName("Src")[0].childNodes[0].nodeValue +
                 "'></img><br><h6>" + 
                 comicsArray[indexOfComics].getElementsByTagName("Desc")[0].childNodes[0].nodeValue +
-                "</h6><br><button onclick='getPrevComic()'><i class='fa fa-arrow-left'></i> Older </button>" +
-                "<button onclick='getNextComic()'>Newer <i class='fa fa-arrow-right'></i></button>";
+                "</h6><br><button class='glass' onclick='getPrevComic()'><i class='fa fa-arrow-left'></i> Older </button>" +
+                "<button class='glass' onclick='getNextComic()'>Newer <i class='fa fa-arrow-right'></i></button>";
                  document.getElementById("mainPanel").innerHTML = mainPanel;
             }
             //else alert("database not ready yet!");
