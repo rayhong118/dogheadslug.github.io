@@ -138,7 +138,7 @@
                 var comicsArray = xmlDoc.getElementsByTagName("Comics");
                 var mainPanel = "<a onclick='getPrevComic()'>Older </a><h5>" +
                 comicsArray[indexOfComics].getElementsByTagName("Title")[0].childNodes[0].nodeValue +
-                "</h5><a onclick='getNextComic()'>Newer </a><img src='/comics/"+
+                "</h5><a onclick='getNextComic()'>Newer </a><br><img src='/comics/"+
                 comicsArray[indexOfComics].getElementsByTagName("Src")[0].childNodes[0].nodeValue +
                 "'></img><br><h6>" + 
                 comicsArray[indexOfComics].getElementsByTagName("Desc")[0].childNodes[0].nodeValue +
