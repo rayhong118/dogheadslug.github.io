@@ -61,7 +61,7 @@
             </div>
             
             <div class=" padded twothirds" id="mainpanel">
-                <p class= "padded silver">v0.14.1</p>
+                <p class= "padded silver">v0.14.2</p>
                 <button type="button" onclick="loadXMLDoc()">Get comics List</button>
                 <div id="mainPanel" class="center"></div>
                 <br><br>
@@ -136,9 +136,10 @@
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 var xmlDoc = xmlhttp.responseXML;
                 var comicsArray = xmlDoc.getElementsByTagName("Comics");
-                var mainPanel = "<h5><button onclick='getPrevComic()'><i class='fa fa-arrow-left'></i> Older </button>" +
+                var mainPanel = "<button onclick='getPrevComic()'><i class='fa fa-arrow-left'></i> Older </button>" +
+				"<button onclick='getNextComic()'> Newer <i class='fa fa-arrow-right'></i></button><h5>" +
                 comicsArray[indexOfComics].getElementsByTagName("Title")[0].childNodes[0].nodeValue +
-                "<button onclick='getNextComic()'> Newer <i class='fa fa-arrow-right'></i></button></h5><br><img src='/comics/"+
+                "</h5><br><img src='/comics/"+
                 comicsArray[indexOfComics].getElementsByTagName("Src")[0].childNodes[0].nodeValue +
                 "'></img><br><h6>" + 
                 comicsArray[indexOfComics].getElementsByTagName("Desc")[0].childNodes[0].nodeValue +
