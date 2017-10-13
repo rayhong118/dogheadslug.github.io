@@ -78,9 +78,10 @@
         </div>
         
         <footer class="padded">
-            <p class= "padded">current version: v0.16</p>
+            <p class= "padded">current version: v0.16.1
             <br><a href="https://github.com/dogheadslug"><font color="black"><i class="fa fa-github" aria-hidden="true"></i>
             GitHub: dogheadslug</font></a>
+			</p>
         </footer>
         
     </body>
@@ -142,7 +143,7 @@
     
     //2. on page load, the comics panel shows the latest comics
     function getLatestIndex(){
-        getComicsMain(0);
+        getComicsMain(maxComicsIndex);
     }
 
     //then load the image, title, date and discription
