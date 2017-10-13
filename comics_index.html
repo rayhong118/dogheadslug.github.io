@@ -22,7 +22,7 @@
             right: 5em;
             width: 5em;
         }
-		
+        
         </style>
     </head>
      
@@ -49,7 +49,7 @@
         </div>
         </div>
         <br>
-		
+        
         <a class="btn glass padded" id="top" ><i class="fa fa-angle-double-up fa-3x"></i></a>
         <a class="btn glass padded" id="content" ><i class="fa fa-picture-o fa-2x" ></i></a>
         
@@ -75,10 +75,10 @@
         </div>
         
         <footer class= "padded gray">
-            <p class= "padded">current version: v0.16.8
+            <p class= "padded">current version: v0.16.9
             <br><a href="https://github.com/dogheadslug"><font color="black"><i class="fa fa-github" aria-hidden="true"></i>
             GitHub: dogheadslug</font></a>
-			</p>
+            </p>
         </footer>
         
     </body>
@@ -122,7 +122,7 @@
         var i;
         var xmlDoc = xml.responseXML;
         //var table="<tr><td><p>list of all comics</p></td></tr>";
-        var table="<tr></tr>";
+        var table="<br>";
         var x = xmlDoc.getElementsByTagName( 'Comics');
         
         maxComicsIndex=x.length-1;
@@ -136,7 +136,7 @@
             "<font></button><br>";
         }
         document.getElementById("comics_list").innerHTML = table;
-		getLatestIndex();
+        getLatestIndex();
     }
     
     //2. on page load, the comics panel shows the latest comics
