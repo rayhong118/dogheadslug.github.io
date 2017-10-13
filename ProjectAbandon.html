@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<html>
     <head>
         <title>Project Abandon</title>
         <link href="stupid.css" rel="stylesheet" type="text/css"/>
@@ -54,7 +54,8 @@
         <div class="threequarters silver center ">
             <div class="padded"><h6>1.Fuel efficiency 油耗</h6>
             <br>Convert "miles per gallon" to "liter per 100 kilometer"
-            <br>转换“英里每加仑”与“百公里油耗”</div>
+            <br>转换“英里每加仑”与“百公里油耗”
+			</div>
             <form class=" padded ">
 			<div class="container">
             <label class="quarter right">Miles per gallon 英里每加仑</label>
@@ -99,6 +100,36 @@
             };*/
             </pre>
             </div>
+			
+			<div class="padded"><h6>2.Height conversion 身高转换</h6>
+            <br>Convert "centimeter" to "feet inch"
+            <br>转换“厘米”与“英尺英寸”
+			<br>-“How tall are you?” -"173cm" -"?????" 
+			</div>
+            <form class=" padded ">
+			<div class="container">
+            <label class="quarter right">Centimeter 厘米</label>
+			<div class="half"><input type='text' id='cm'/></div>
+			</div>
+			
+			<br>
+			
+			<div class="container">
+            <label class="quarter right">Feet 英尺</label>
+			<div class="half"><input type='text' id='ft'/></div>
+			</div>
+			<div class="container">
+            <label class="quarter right">Inch 英尺</label>
+			<div class="half"><input type='text' id='in'/></div>
+			</div>
+            </form>
+			
+            <div class="padded">
+            <h6>code abandoned</h6>
+            <pre>
+            
+            </pre>
+            </div>
         </div>
         </div>
         
@@ -111,6 +142,7 @@ $("a[href='#top']").click(function() {
     return false;
 });
 
+//No 1
 $("#MPG").keyup(function() {
     var mpgin= $('#MPG').val();
     var lpkmout = 100.0/(mpgin*1.60934/3.78541);
@@ -124,6 +156,24 @@ $("#LPKM").keyup(function() {
     $('#MPG').val(mpgout);
 });
 
+//No 2
+$("#cm").keyup(function() {
+    var cmin= $('#cm').val();
+    var feetout = parseInt(cmin/30.48);
+	var inchout = Math.round((cmin%30.48)/2.54);
+    $('#ft').val(feetout);
+	$('#in').val(inchout);
+});
+
+$("#ft").keyup(function() {
+    var cmout = $('#ft').val()*30.48+$('#in').val()*2.54;
+    $('#cm').val(cmout);
+});
+
+$("#in").keyup(function() {
+    var cmout = $('#ft').val()*30.48+$('#in').val()*2.54;
+    $('#cm').val(cmout);
+});
 
 
 </script>
