@@ -74,7 +74,7 @@
         </div>
         
         <footer class= "padded gray">
-            <p class= "padded">current version: v0.16.4
+            <p class= "padded">current version: v0.16.5
             <br><a href="https://github.com/dogheadslug"><font color="black"><i class="fa fa-github" aria-hidden="true"></i>
             GitHub: dogheadslug</font></a>
 			</p>
@@ -126,9 +126,9 @@
         
         maxComicsIndex=x.length-1;
         for (i = x.length-1; i >= 0; i--) { 
-            table += "<tr class='glass'><td align='left'><button onclick=getComicsMain("+
+            table += "<tr><td align='left'><button onclick=getComicsMain("+
             i +
-            ") class='fill white'><font color='black'>" +
+            ") class='fill glass'><font color='black'>" +
             x[i].getElementsByTagName("Date")[0].childNodes[0].nodeValue +
             "  " +
             x[i].getElementsByTagName("Title")[0].childNodes[0].nodeValue +
