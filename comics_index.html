@@ -61,8 +61,8 @@
             </div>
             
             <div class=" padded twothirds" id="mainpanel">
-                <p class= "padded silver">v0.14.2</p>
-                <button type="button" onclick="loadXMLDoc()">Get comics List</button>
+                <p class= "padded silver">v0.15</p>
+                <!--button type="button" onclick="loadXMLDoc()">Get comics List</button-->
                 <div id="mainPanel" class="center"></div>
                 <br><br>
                 
@@ -88,6 +88,11 @@
         scrollTop:   $("#mainpanel").offset().top}, "slow");
     });
     
+	$( document ).ready(function() {
+		console.log( "ready!" );
+		loadXMLDoc();
+	});
+	
     var currComicsIndex = 0;
     var maxComicsIndex = 0;
     
@@ -126,6 +131,7 @@
     
     //2. on page load, the comics panel shows the latest comics
     function getLatestIndex(){
+		getComicsMain(maxComicsIndex);
     }
 
     //then load the image, title, date and discription
@@ -163,13 +169,13 @@
 	
 	//newer, higher index value
     function getNextComic(){
-		console.log(currComicsIndex);
+		//console.log(currComicsIndex);
 		if (currComicsIndex == maxComicsIndex) alert("this is the most recent one!");
 		else getComicsMain(currComicsIndex+1);
     }
 	//older, lower index value
     function getPrevComic(){
-		console.log(currComicsIndex);
+		//console.log(currComicsIndex);
 		if (currComicsIndex == 0) alert("this is the oldest one!");
 		else getComicsMain(currComicsIndex-1);
     }
