@@ -61,7 +61,7 @@
             </div>
             
             <div class=" padded twothirds" id="mainpanel">
-                <p class= "padded silver">v0.13</p>
+                <p class= "padded silver">v0.14</p>
                 <button type="button" onclick="loadXMLDoc()">Get comics List</button>
                 <div id="mainPanel" class="center"></div>
                 <br><br>
@@ -159,12 +159,18 @@
     //3. when the content in the main comics panel is updated, 
     //show the mini icon, date and title of the previous and next
     //item as well as tje current one below the main panel
+	
+	//newer, higher index value
     function getNextComic(){
 		console.log(currComicsIndex);
+		if (currComicsIndex == maxComicsIndex) alert("this is the most recent one!");
+		else getComicsMain(currComicsIndex+1);
     }
-
+	//older, lower index value
     function getPrevComic(){
 		console.log(currComicsIndex);
+		if (currComicsIndex == 0) alert("this is the oldest one!");
+		else getComicsMain(currComicsIndex-1);
     }
 
     //note: if the next of prev do not exist, leave it blank
