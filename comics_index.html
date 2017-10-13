@@ -22,11 +22,6 @@
             right: 5em;
             width: 5em;
         }
-        
-        footer{
-            background-color: 666666;
-            background-position: center;
-        }
 		
         </style>
     </head>
@@ -79,7 +74,7 @@
         </div>
         
         <footer class= "padded gray">
-            <p class= "padded">current version: v0.16.3
+            <p class= "padded">current version: v0.16.4
             <br><a href="https://github.com/dogheadslug"><font color="black"><i class="fa fa-github" aria-hidden="true"></i>
             GitHub: dogheadslug</font></a>
 			</p>
@@ -102,7 +97,7 @@
     $( document ).ready(function() {
         console.log( "ready!" );
         loadXMLDoc();
-        getLatestIndex();
+        //getLatestIndex();
     });
     
     var currComicsIndex = 0;
@@ -140,6 +135,7 @@
             "<font></button></td></tr>";
         }
         document.getElementById("comics_list").innerHTML = table;
+		getLatestIndex();
     }
     
     //2. on page load, the comics panel shows the latest comics
