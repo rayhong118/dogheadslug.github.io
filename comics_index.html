@@ -48,7 +48,8 @@
             href="makeMoney.html"><h6>JS</h6></a>
         </div>
         </div>
-        
+        <br>
+		
         <a class="btn glass padded" id="top" ><i class="fa fa-angle-double-up fa-3x"></i></a>
         <a class="btn glass padded" id="content" ><i class="fa fa-picture-o fa-2x" ></i></a>
         
@@ -74,7 +75,7 @@
         </div>
         
         <footer class= "padded gray">
-            <p class= "padded">current version: v0.16.7
+            <p class= "padded">current version: v0.16.8
             <br><a href="https://github.com/dogheadslug"><font color="black"><i class="fa fa-github" aria-hidden="true"></i>
             GitHub: dogheadslug</font></a>
 			</p>
@@ -126,13 +127,13 @@
         
         maxComicsIndex=x.length-1;
         for (i = x.length-1; i >= 0; i--) { 
-            table += "<tr><td align='left'><button onclick=getComicsMain("+
+            table += "<button onclick=getComicsMain("+
             i +
             ") class='fill glass'><font color='black'>" +
             x[i].getElementsByTagName("Date")[0].childNodes[0].nodeValue +
             "  " +
             x[i].getElementsByTagName("Title")[0].childNodes[0].nodeValue +
-            "<font></button></td></tr>";
+            "<font></button><br>";
         }
         document.getElementById("comics_list").innerHTML = table;
 		getLatestIndex();
