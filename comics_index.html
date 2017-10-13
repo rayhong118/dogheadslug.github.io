@@ -75,7 +75,7 @@
         </div>
         
         <footer class= "padded gray">
-            <p class= "padded">current version: v0.16.9
+            <p class= "padded">current version: v0.16.10
             <br><a href="https://github.com/dogheadslug"><font color="black"><i class="fa fa-github" aria-hidden="true"></i>
             GitHub: dogheadslug</font></a>
             </p>
@@ -155,7 +155,9 @@
                 var mainPanel = "<button class='glass' onclick='getPrevComic()'><i class='fa fa-arrow-left'></i> Older </button>" +
                 "<button class='glass' onclick='getNextComic()'> Newer <i class='fa fa-arrow-right'></i></button><h5>" +
                 comicsArray[indexOfComics].getElementsByTagName("Title")[0].childNodes[0].nodeValue +
-                "</h5><br><img src='/comics/"+
+                "</h5><br><p class='center'>"+
+				comicsArray[indexOfComics].getElementsByTagName("Date")[0].childNodes[0].nodeValue +
+				"</p><img src='/comics/"+
                 comicsArray[indexOfComics].getElementsByTagName("Src")[0].childNodes[0].nodeValue +
                 "'></img><br><h6>" + 
                 comicsArray[indexOfComics].getElementsByTagName("Desc")[0].childNodes[0].nodeValue +
