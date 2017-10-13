@@ -136,13 +136,13 @@
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 var xmlDoc = xmlhttp.responseXML;
                 var comicsArray = xmlDoc.getElementsByTagName("Comics");
-                var mainPanel = "<h5><button onclick='getPrevComic()'><i class='fa fa-arrow-left'></i> Older </button>          " +
+                var mainPanel = "<h5><button onclick='getPrevComic()'><i class='fa fa-arrow-left'></i> Older </button>" +
                 comicsArray[indexOfComics].getElementsByTagName("Title")[0].childNodes[0].nodeValue +
-                "          <button onclick='getNextComic()'>Newer <i class='fa fa-arrow-right'></i></button></h5><br><img src='/comics/"+
+                "<button onclick='getNextComic()'>Newer <i class='fa fa-arrow-right'></i></button></h5><br><img src='/comics/"+
                 comicsArray[indexOfComics].getElementsByTagName("Src")[0].childNodes[0].nodeValue +
                 "'></img><br><h6>" + 
                 comicsArray[indexOfComics].getElementsByTagName("Desc")[0].childNodes[0].nodeValue +
-                "</h6><br><button onclick='getPrevComic()'><i class='fa fa-arrow-left'></i> Older </button>";
+                "</h6><br><button onclick='getPrevComic()'><i class='fa fa-arrow-left'></i> Older </button>" +
 				"<button onclick='getNextComic()'>Newer <i class='fa fa-arrow-right'></i></button>";
                  document.getElementById("mainPanel").innerHTML = mainPanel;
             }
@@ -160,9 +160,11 @@
     //show the mini icon, date and title of the previous and next
     //item as well as tje current one below the main panel
     function getNextComic(){
+		console.log(currComicsIndex);
     }
 
     function getPrevComic(){
+		console.log(currComicsIndex);
     }
 
     //note: if the next of prev do not exist, leave it blank
