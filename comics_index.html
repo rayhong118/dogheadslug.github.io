@@ -61,7 +61,7 @@
             </div>
             
             <div class=" padded twothirds" id="mainpanel">
-                <p class= "padded silver">v0.15</p>
+                <p class= "padded silver">v0.15.1</p>
                 <!--button type="button" onclick="loadXMLDoc()">Get comics List</button-->
                 <div id="mainPanel" class="center"></div>
                 <br><br>
@@ -113,7 +113,7 @@
     function getComicList(xml){
         var i;
         var xmlDoc = xml.responseXML;
-        var table="<tr><td><p>list of all comics</p></td></tr>";
+        var table="<tr></tr>";
         var x = xmlDoc.getElementsByTagName( 'Comics');
         
         maxComicsIndex=x.length-1;
