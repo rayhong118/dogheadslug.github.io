@@ -61,7 +61,7 @@
             </div>
             
             <div class=" padded twothirds" id="mainpanel">
-                <p class= "padded silver">v0.15.1</p>
+                <p class= "padded silver">v0.15.2</p>
                 <!--button type="button" onclick="loadXMLDoc()">Get comics List</button-->
                 <div id="mainPanel" class="center"></div>
                 <br><br>
@@ -91,6 +91,7 @@
 	$( document ).ready(function() {
 		console.log( "ready!" );
 		loadXMLDoc();
+		getLatestIndex();
 	});
 	
     var currComicsIndex = 0;
