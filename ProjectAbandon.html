@@ -109,9 +109,7 @@
             <label class="quarter right">Centimeter 厘米</label>
             <div class="half"><input type='text' id='cm'/></div>
             </div>
-            
             <br>
-            
             <div class="container">
             <label class="quarter right">Feet 英尺</label>
             <div class="half"><input type='text' id='ft'/></div>
@@ -125,11 +123,28 @@
             <div class="padded">
             <h6>code abandoned</h6>
             <pre>
-			nothing</pre>
-            <pre>
+			nothing
+			</pre>
             
-            </pre>
             </div>
+			
+			 <div class="padded"><h6>3.Reversing a string 倒转句子</h6>
+            <br>reverse a sentence to avoid onine censorship
+            <br>将句子倒转以规避网络审查
+            </div>
+            <form class=" padded ">
+            <div class="container">
+            <label class="quarter right">Input 输入</label>
+            <div class="half"><input type='text' id='reverseIn'/></div>
+            </div>
+            <br>
+            <div class="container">
+            <label class="quarter right">Output 输出</label>
+            <div class="half"><input type='text' id='reverseOut'/></div>
+            </div>
+            </form>
+			
+			
         </div>
         </div>
         
@@ -151,7 +166,7 @@ $("a[href='#top']").click(function() {
     return false;
 });
 
-//No 1
+//No.1
 $("#MPG").keyup(function() {
     var mpgin= $('#MPG').val();
     var lpkmout = 100.0/(mpgin*1.60934/3.78541);
@@ -165,7 +180,7 @@ $("#LPKM").keyup(function() {
     $('#MPG').val(mpgout);
 });
 
-//No 2
+//No.2
 $("#cm").keyup(function() {
     var cmin= $('#cm').val();
     var feetout = parseInt(cmin/30.48);
@@ -183,6 +198,16 @@ $("#in").keyup(function() {
     var cmout = $('#ft').val()*30.48+$('#in').val()*2.54;
     $('#cm').val(cmout);
 });
+
+//No.3
+$("#reverseIn").keyup(function() {
+    var tmpString = $('#reverseIn').val()
+    $('#reverseOut').val(reverseString(tmpString));
+});
+
+function reverseString(str) {
+    return str.split("").reverse().join("");
+}
 
 
 </script>
