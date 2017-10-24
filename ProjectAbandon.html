@@ -123,12 +123,11 @@
             <div class="padded">
             <h6>code abandoned</h6>
             <pre>
-			nothing
-			</pre>
-            
+            nothing
+            </pre>
             </div>
-			
-			 <div class="padded"><h6>3.Reversing a string 倒转句子</h6>
+            
+             <div class="padded"><h6>3.Reversing a string 倒转句子</h6>
             <br>Reverse a sentence to avoid online censorship
             <br>将句子倒转以规避网络审查
             </div>
@@ -143,8 +142,16 @@
             <div class="half"><input type='text' id='reverseOut'/></div>
             </div>
             </form>
-			
-			
+            
+            
+            <div class="padded"><h6>4.Powerball combination 彩票数字生成</h6>
+            <br>
+            <p>generate a random <a href="http://www.calottery.com/play/draw-games/powerball">POWERBALL </a> combination</p>
+            <button class="btn navy" onclick="no4_main()" >Go</button>
+            <p id="no4_regnum"> </p>
+            <p id="no4_sepnum"> </p>
+            </div>
+            
         </div>
         </div>
         
@@ -207,6 +214,31 @@ $("#reverseIn").keyup(function() {
 
 function reverseString(str) {
     return str.split("").reverse().join("");
+}
+
+//No.4
+function no4_main(){
+    var max = 69;
+    var min = 1;
+    var points = [0,0,0,0,0];
+    var random = Math.floor(Math.random() * (max - min + 1)) + min;
+    var i = 0;
+    var tmp = 0;
+    while(i<5){
+        random = Math.floor(Math.random() * (max - min + 1)) + min;
+        points[i] = random;
+        while(points[0]==random||points[1]==random||points[2]==random||
+        points[3]==random||points[4]==random){
+            random = Math.floor(Math.random() * (max - min + 1)) + min;
+            //points[i] = random;
+        }
+        points[i] = random;
+        i++;
+    }
+    var sep = Math.floor(Math.random() * (26)) + 1;
+    points.sort(function(a, b){return a - b});
+    document.getElementById("no4_sepnum").innerHTML = "special number is "+sep;
+    document.getElementById("no4_regnum").innerHTML = points;
 }
 
 
