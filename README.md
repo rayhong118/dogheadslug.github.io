@@ -1,6 +1,9 @@
 # dogheadslug.github.io
 github site
 
+next stage: using bootstrap for webpage styling
+
+
 MC builderinfo:
 a builder info list for our minecraft server
 
