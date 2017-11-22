@@ -39,8 +39,7 @@
             </div>
         </header>
 		
-        <div class="container">
-        <div class="row">
+        <div class="row container">
             <a class="btn rounded navy" 
             href="index.html"><h5>Home</h5></a>
             <a class="btn rounded navy" 
@@ -52,14 +51,12 @@
             <a class="btn rounded white" 
             href="makeMoney.html"><h5>JS</h5></a>
         </div>
-        </div>
         <br>
         
         <a class="btn btn-default" id="top" ><i class="fa fa-angle-double-up fa-3x"></i></a>
         <a class="btn btn-default" id="content" ><i class="fa fa-picture-o fa-2x" ></i></a>
         
-        <div class="container">
-        <div class="row">
+        <div class="row container">
         
             <div class="col-md-4">
                 <table class="table table-striped" id="comics_list">
@@ -68,21 +65,18 @@
             </div>
             
             <div class="col-md-8 text-center" id="mainpanel">
-				<div class="container-fluid" >
                 
                 <!--button type="button" onclick="loadXMLDoc()">Get comics List</button-->
                 <div id="mainPanel"></div>
                 <br><br>
-                </div>
                 <br><br><br><br><br><br>
             </div>
             
         </div>
-        </div>
         
         <div class= "row">
 		<div class="col-sm-12">
-            <p>Current version: v0.18
+            <p>Current version: v0.18.1
             <br><a href="https://github.com/dogheadslug"><font color="black"><i class="fa fa-github" aria-hidden="true"></i>
             GitHub: dogheadslug</font></a>
             </p>
@@ -161,11 +155,11 @@
                 var xmlDoc = xmlhttp.responseXML;
                 var comicsArray = xmlDoc.getElementsByTagName("Comics");
                 var mainPanel = "<button type='button' class='btn btn-primary' onclick='getPrevComic()'><i class='fa fa-arrow-left'></i> Older </button>" +
-                "<button type='button' class='btn btn-primary' onclick='getNextComic()'> Newer <i class='fa fa-arrow-right'></i></button><h5>" +
+                "<button type='button' class='btn btn-primary' onclick='getNextComic()'> Newer <i class='fa fa-arrow-right'></i></button><h4>" +
                 comicsArray[indexOfComics].getElementsByTagName("Title")[0].childNodes[0].nodeValue +
-                "</h5><br><p class='center'>"+
+                "</h4><br><h6>"+
 				comicsArray[indexOfComics].getElementsByTagName("Date")[0].childNodes[0].nodeValue +
-				"</p><img src='/comics/"+
+				"</h6><img src='/comics/"+
                 comicsArray[indexOfComics].getElementsByTagName("Src")[0].childNodes[0].nodeValue +
                 "'></img><br><h5>" + 
                 comicsArray[indexOfComics].getElementsByTagName("Desc")[0].childNodes[0].nodeValue +
