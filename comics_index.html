@@ -67,7 +67,7 @@
                 
             </div>
             
-            <div class="col-md-8 text-center" id="mainpanel">
+            <div class="col-sm-8 text-center" id="mainpanel">
                 
                 <!--button type="button" onclick="loadXMLDoc()">Get comics List</button-->
                 <div id="mainPanel" class="center padded"></div>
@@ -80,7 +80,7 @@
         </div>
         
         <footer class= "row">
-            <p>current version: v0.17.3
+            <p>current version: v0.17.4
             <br><a href="https://github.com/dogheadslug"><font color="black"><i class="fa fa-github" aria-hidden="true"></i>
             GitHub: dogheadslug</font></a>
             </p>
@@ -162,7 +162,7 @@
                 comicsArray[indexOfComics].getElementsByTagName("Title")[0].childNodes[0].nodeValue +
                 "</h5><br><p class='center'>"+
 				comicsArray[indexOfComics].getElementsByTagName("Date")[0].childNodes[0].nodeValue +
-				"</p><img src='/comics/"+
+				"</p><img class='img-responsive' src='/comics/"+
                 comicsArray[indexOfComics].getElementsByTagName("Src")[0].childNodes[0].nodeValue +
                 "'></img><br><h6>" + 
                 comicsArray[indexOfComics].getElementsByTagName("Desc")[0].childNodes[0].nodeValue +
