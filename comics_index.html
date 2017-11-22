@@ -53,8 +53,7 @@
         </div>
         <br>
         
-        <a class="btn btn-default" id="top" ><i class="fa fa-angle-double-up fa-3x"></i></a>
-        <a class="btn btn-default" id="content" ><i class="fa fa-picture-o fa-2x" ></i></a>
+
         
         <div class="row container">
         
@@ -76,13 +75,15 @@
         
         <div class= "row">
 		<div class="col-sm-12">
-            <p>Current version: v0.18.1
+            <p>Current version: v0.18.2
             <br><a href="https://github.com/dogheadslug"><font color="black"><i class="fa fa-github" aria-hidden="true"></i>
             GitHub: dogheadslug</font></a>
             </p>
         </div>
 		</div>
         
+		<a class="btn btn-default" id="top" ><i class="fa fa-angle-double-up fa-3x"></i></a>
+        <a class="btn btn-default" id="content" ><i class="fa fa-picture-o fa-2x" ></i></a>
     </body>
 
     
@@ -161,7 +162,7 @@
 				comicsArray[indexOfComics].getElementsByTagName("Date")[0].childNodes[0].nodeValue +
 				"</h6><img src='/comics/"+
                 comicsArray[indexOfComics].getElementsByTagName("Src")[0].childNodes[0].nodeValue +
-                "'></img><br><h5>" + 
+                "'><br><h5>" + 
                 comicsArray[indexOfComics].getElementsByTagName("Desc")[0].childNodes[0].nodeValue +
                 "</h5><br><button type='button' class='btn btn-primary' onclick='getPrevComic()'><i class='fa fa-arrow-left'></i> Older </button>" +
                 "<button type='button' class='btn btn-primary' onclick='getNextComic()'>Newer <i class='fa fa-arrow-right'></i></button>";
