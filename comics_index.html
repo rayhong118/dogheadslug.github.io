@@ -82,7 +82,7 @@
         
         <div class= "row">
 		<div class="col-sm-12">
-            <p>Current version: v0.17.12
+            <p>Current version: v0.17.13
             <br><a href="https://github.com/dogheadslug"><font color="black"><i class="fa fa-github" aria-hidden="true"></i>
             GitHub: dogheadslug</font></a>
             </p>
@@ -165,9 +165,9 @@
                 comicsArray[indexOfComics].getElementsByTagName("Title")[0].childNodes[0].nodeValue +
                 "</h5><br><p class='center'>"+
 				comicsArray[indexOfComics].getElementsByTagName("Date")[0].childNodes[0].nodeValue +
-				"</p><img class='img-responsive' src='/comics/"+
+				"</p><div class='container'><img class='img-responsive' src='/comics/"+
                 comicsArray[indexOfComics].getElementsByTagName("Src")[0].childNodes[0].nodeValue +
-                "'></img><br><h5>" + 
+                "'></img></div><br><h5>" + 
                 comicsArray[indexOfComics].getElementsByTagName("Desc")[0].childNodes[0].nodeValue +
                 "</h5><br><button type='button' class='btn btn-primary' onclick='getPrevComic()'><i class='fa fa-arrow-left'></i> Older </button>" +
                 "<button type='button' class='btn btn-primary' onclick='getNextComic()'>Newer <i class='fa fa-arrow-right'></i></button>";
