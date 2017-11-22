@@ -1,11 +1,13 @@
 ﻿<!DOCTYPE html>
     <head>
-        <title>Doghead comics</title>
-        <link href="stupid.css" rel="stylesheet" type="text/css"/>
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" 
-        rel="stylesheet">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <meta charset="utf-8">
+    <title>Doghead comics</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
         <style>
         
         #top {
@@ -56,10 +58,10 @@
         <div class="container center">
         <div class="container center threequarters">
         
-            <div class="third">
-                <div class="gray center fill">
-                <table id="comics_list"  class="center"></table>
-                </div>
+            <div class="col-md-4 col-lg-2 text-center">
+                <table class="table table-striped" id="comics_list">ttt
+                </table>
+                
             </div>
             
             <div class=" twothirds silver" id="mainpanel">
@@ -127,9 +129,9 @@
         
         maxComicsIndex=x.length-1;
         for (i = x.length-1; i >= 0; i--) { 
-            table += "<button onclick=getComicsMain("+
+            table += "<button type='button' class='btn' onclick=getComicsMain("+
             i +
-            ") class='fill glass'><font color='black'>" +
+            ") ><font color='black'>" +
             x[i].getElementsByTagName("Date")[0].childNodes[0].nodeValue +
             "  " +
             x[i].getElementsByTagName("Title")[0].childNodes[0].nodeValue +
@@ -152,8 +154,8 @@
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 var xmlDoc = xmlhttp.responseXML;
                 var comicsArray = xmlDoc.getElementsByTagName("Comics");
-                var mainPanel = "<button class='glass' onclick='getPrevComic()'><i class='fa fa-arrow-left'></i> Older </button>" +
-                "<button class='glass' onclick='getNextComic()'> Newer <i class='fa fa-arrow-right'></i></button><h5>" +
+                var mainPanel = "<button type='button' class='btn' onclick='getPrevComic()'><i class='fa fa-arrow-left'></i> Older </button>" +
+                "<button type='button' class='btn' onclick='getNextComic()'> Newer <i class='fa fa-arrow-right'></i></button><h5>" +
                 comicsArray[indexOfComics].getElementsByTagName("Title")[0].childNodes[0].nodeValue +
                 "</h5><br><p class='center'>"+
 				comicsArray[indexOfComics].getElementsByTagName("Date")[0].childNodes[0].nodeValue +
@@ -161,8 +163,8 @@
                 comicsArray[indexOfComics].getElementsByTagName("Src")[0].childNodes[0].nodeValue +
                 "'></img><br><h6>" + 
                 comicsArray[indexOfComics].getElementsByTagName("Desc")[0].childNodes[0].nodeValue +
-                "</h6><br><button class='glass' onclick='getPrevComic()'><i class='fa fa-arrow-left'></i> Older </button>" +
-                "<button class='glass' onclick='getNextComic()'>Newer <i class='fa fa-arrow-right'></i></button>";
+                "</h6><br><button type='button' class='btn' onclick='getPrevComic()'><i class='fa fa-arrow-left'></i> Older </button>" +
+                "<button type='button' class='btn' onclick='getNextComic()'>Newer <i class='fa fa-arrow-right'></i></button>";
                  document.getElementById("mainPanel").innerHTML = mainPanel;
             }
             //else alert("database not ready yet!");
