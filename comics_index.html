@@ -15,7 +15,7 @@
             bottom: 5em;
             right: 5em;
             width: 5em;
-			z-index:-1;
+			z-index:100;
             
         }
         
@@ -42,15 +42,15 @@
         <div class="container">
         <div class="row">
             <a class="btn rounded navy" 
-            href="index.html"><h6>Home</h6></a>
+            href="index.html"><h5>Home</h5></a>
             <a class="btn rounded navy" 
-            href="comics_index.html"><h6>Doghead comics</h6></a>
+            href="comics_index.html"><h5>Doghead comics</h5></a>
             <a class="btn rounded white" 
-            href="raccoon_comics.html"><h6>Raccoon comics</h6></a>
+            href="raccoon_comics.html"><h5>Raccoon comics</h5></a>
             <a class="btn rounded white" 
-            href="gallery_armored.html"><h6>gallery</h6></a>
+            href="gallery_armored.html"><h5>gallery</h5></a>
             <a class="btn rounded white" 
-            href="makeMoney.html"><h6>JS</h6></a>
+            href="makeMoney.html"><h5>JS</h5></a>
         </div>
         </div>
         <br>
@@ -80,7 +80,7 @@
         </div>
         
         <footer class= "row">
-            <p>current version: v0.17.2
+            <p>current version: v0.17.3
             <br><a href="https://github.com/dogheadslug"><font color="black"><i class="fa fa-github" aria-hidden="true"></i>
             GitHub: dogheadslug</font></a>
             </p>
@@ -157,8 +157,8 @@
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 var xmlDoc = xmlhttp.responseXML;
                 var comicsArray = xmlDoc.getElementsByTagName("Comics");
-                var mainPanel = "<button type='button' class='btn btn-default' onclick='getPrevComic()'><i class='fa fa-arrow-left'></i> Older </button>" +
-                "<button type='button' class='btn btn-default' onclick='getNextComic()'> Newer <i class='fa fa-arrow-right'></i></button><h5>" +
+                var mainPanel = "<button type='button' class='btn btn-primary' onclick='getPrevComic()'><i class='fa fa-arrow-left'></i> Older </button>" +
+                "<button type='button' class='btn btn-primary' onclick='getNextComic()'> Newer <i class='fa fa-arrow-right'></i></button><h5>" +
                 comicsArray[indexOfComics].getElementsByTagName("Title")[0].childNodes[0].nodeValue +
                 "</h5><br><p class='center'>"+
 				comicsArray[indexOfComics].getElementsByTagName("Date")[0].childNodes[0].nodeValue +
@@ -166,8 +166,8 @@
                 comicsArray[indexOfComics].getElementsByTagName("Src")[0].childNodes[0].nodeValue +
                 "'></img><br><h6>" + 
                 comicsArray[indexOfComics].getElementsByTagName("Desc")[0].childNodes[0].nodeValue +
-                "</h6><br><button type='button' class='btn btn-default' onclick='getPrevComic()'><i class='fa fa-arrow-left'></i> Older </button>" +
-                "<button type='button' class='btn btn-default' onclick='getNextComic()'>Newer <i class='fa fa-arrow-right'></i></button>";
+                "</h6><br><button type='button' class='btn btn-primary' onclick='getPrevComic()'><i class='fa fa-arrow-left'></i> Older </button>" +
+                "<button type='button' class='btn btn-primary' onclick='getNextComic()'>Newer <i class='fa fa-arrow-right'></i></button>";
                  document.getElementById("mainPanel").innerHTML = mainPanel;
             }
             //else alert("database not ready yet!");
