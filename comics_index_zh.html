@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+    <head>
+    <title>狗头漫画</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+        <style>
+        
+        #top {
+            position: fixed;
+            bottom: 5em;
+            right: 5em;
+            width: 5em;
+			z-index:100;
+            
+        }
+        
+        #content {
+            position: fixed;
+            bottom: 10em;
+            right: 5em;
+            width: 5em;
+			z-index:100;
+        }
+        
+        </style>
+    </head>
+     
+    <body>
+        <div class=" container-fluid ">
+            <a href="index.html"><font color="blue">Zhihao Hong's personal webpage</font></a>
+			<br>
+            <h2 class="padded"><font>狗头漫画</font></h2>
+        </div>
+		
+        <div class="row container">
+            <a class="btn rounded navy" 
+            href="index.html"><h5>主页</h5></a>
+            <a class="btn rounded navy" 
+            href="comics_index_zh.html"><h5>狗头漫画</h5></a>
+			<a class="btn rounded navy" 
+            href="comics_index.html"><h5>doghead comics</h5></a>
+            <a class="btn rounded white" 
+            href="raccoon_comics.html"><h5>浣熊漫画</h5></a>
+            <a class="btn rounded white" 
+            href="gallery_armored.html"><h5>图册</h5></a>
+            <a class="btn rounded white" 
+            href="makeMoney.html"><h5>JS</h5></a>
+        </div>
+        <br>
+        
+        
+        <div class="row container-fluid">
+			<div class="container col-lg-1">
+                
+            </div>
+			
+            <div class="container col-lg-3">
+                <table class="table table-striped" id="comics_list">
+                </table>
+            </div>
+            
+            <div class="container col-lg-7 text-center" id="mainpanel">
+                <!--button type="button" onclick="loadXMLDoc()">Get comics List</button-->
+                <div id="mainPanel"></div>
+                <br><br>
+                <br><br><br><br><br><br>
+            </div>
+			
+			<div class="container col-lg-1">
+                
+            </div>
+            
+        </div>
+        
+        <div class= "row container-fluid">
+		<div class="col-sm-12">
+            <p>Current version: v0.19.3
+            <br><a href="https://github.com/dogheadslug"><font color="black"><i class="fa fa-github" aria-hidden="true"></i>
+            GitHub: dogheadslug</font></a>
+            </p>
+        </div>
+		</div>
+        
+		<a class="btn btn-default" id="top" ><i class="fa fa-angle-double-up fa-3x"></i></a>
+        <a class="btn btn-default" id="content" ><i class="fa fa-picture-o fa-2x" ></i></a>
+    </body>
+
+    
+<script>
+
+    $("#top").click(function() {
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+    });
+    
+    $("#content").click(function() {
+        $("html, body").animate({
+        scrollTop:   $("#mainpanel").offset().top}, "slow");
+    });
+    
+    $( document ).ready(function() {
+        console.log( "ready!" );
+        loadXMLDoc();
+        //getLatestIndex();
+    });
+    
+    var currComicsIndex = 0;
+    var maxComicsIndex = 0;
+    
+    function loadXMLDoc() {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                getComicList(this);
+            }
+            //else alert("database not ready yet!");
+        };
+        xmlhttp.open("GET", "comics_db_zh.xml", true);//get data from database
+        xmlhttp.send();
+    }
+    
+    //1. on page load, get the list of all comics from xml database.
+    //show date and title of each item
+    function getComicList(xml){
+        var i;
+        var xmlDoc = xml.responseXML;
+        //var table="<tr><td><p>list of all comics</p></td></tr>";
+        var table="<br>";
+        var x = xmlDoc.getElementsByTagName( 'Comics');
+        
+        maxComicsIndex=x.length-1;
+        for (i = x.length-1; i >= 0; i--) { 
+            table += "<button type='button' class='btn btn-link' onclick=getComicsMain("+
+            i +
+            ")>" +
+            x[i].getElementsByTagName("Date")[0].childNodes[0].nodeValue +
+            "  " +
+            x[i].getElementsByTagName("Title")[0].childNodes[0].nodeValue +
+            "</button><br>";
+        }
+        document.getElementById("comics_list").innerHTML = table;
+        getLatestIndex();
+    }
+    
+    //2. on page load, the comics panel shows the latest comics
+    function getLatestIndex(){
+        getComicsMain(maxComicsIndex);
+    }
+
+    //then load the image, title, date and discription
+    function getComicsMain(indexOfComics){
+        currComicsIndex = indexOfComics;
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                var xmlDoc = xmlhttp.responseXML;
+                var comicsArray = xmlDoc.getElementsByTagName("Comics");
+                var mainPanel = "<button type='button' class='btn btn-primary' onclick='getPrevComic()'><i class='fa fa-arrow-left'></i> Older </button> " +
+                "<button type='button' class='btn btn-primary' onclick='getNextComic()'> Newer <i class='fa fa-arrow-right'></i></button><h4>" +
+                comicsArray[indexOfComics].getElementsByTagName("Title")[0].childNodes[0].nodeValue +
+                "</h4><br><h6>"+
+				comicsArray[indexOfComics].getElementsByTagName("Date")[0].childNodes[0].nodeValue +
+				"</h6><img src='/comics/"+
+                comicsArray[indexOfComics].getElementsByTagName("Src")[0].childNodes[0].nodeValue +
+                "' class='img-fluid'><br><h5>" + 
+                comicsArray[indexOfComics].getElementsByTagName("Desc")[0].childNodes[0].nodeValue +
+                "</h5><br><button type='button' class='btn btn-primary' onclick='getPrevComic()'><i class='fa fa-arrow-left'></i> Older </button> " +
+                "<button type='button' class='btn btn-primary' onclick='getNextComic()'>Newer <i class='fa fa-arrow-right'></i></button>";
+                 document.getElementById("mainPanel").innerHTML = mainPanel;
+            }
+            //else alert("database not ready yet!");
+        };
+        xmlhttp.open("GET", "comics_db_zh.xml", true);//get data from database
+        xmlhttp.send();
+        
+        //scroll to image position
+        $("html, body").animate({
+        scrollTop:   $("#mainpanel").offset().top}, "slow");
+    }
+
+    //3. when the content in the main comics panel is updated, 
+    //show the mini icon, date and title of the previous and next
+    //item as well as tje current one below the main panel
+    
+    //newer, higher index value
+    function getNextComic(){
+        //console.log(currComicsIndex);
+        if (currComicsIndex == maxComicsIndex) alert("this is the most recent one!");
+        else getComicsMain(currComicsIndex+1);
+    }
+    //older, lower index value
+    function getPrevComic(){
+        //console.log(currComicsIndex);
+        if (currComicsIndex == 0) alert("this is the oldest one!");
+        else getComicsMain(currComicsIndex-1);
+    }
+
+    //note: if the next of prev do not exist, leave it blank
+    //or show "this is the last/first one" 
+
+
+</script>
