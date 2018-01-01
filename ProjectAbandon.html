@@ -1,19 +1,15 @@
 <html>
     <head>
         <title>Project Abandon</title>
-        <link href="stupid.css" rel="stylesheet" type="text/css"/>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <meta charset="utf-8">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
         <style>
-        body{
-            background-attachment: fixed;
-            //background-image: url("MC/backgroundday.jpg");
-            background-size: cover;
-            //background-color: 666666;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
+
         
         #to-top {
             position: fixed;
@@ -31,44 +27,48 @@
     </head>
      
     <body>
-        <header class="container center padded blue">
-        <div class="threequarters padded">
+        <header class="container">
         <a href="index.html"><font color="white">Back to main page 回到主页</font></a>
-      
         <h2 class="padded"><font>Project Abandon<br>‘放弃’计划</font></h2>
-        
-        </div>
         </header>
-        <div class="padded container center aqua">
-        <div class="threequarters">
-            <a class="btn rounded navy" 
-            href="index.html"><h6>Home</h6></a>
-            <a class="btn rounded navy pulse" 
-                href="DC.html"><h6>DC</h6></a>
+        
+        <div class="container">
+            <a class="btn btn-sm btn-outline-primary" 
+            href="comics_index.html">Doghead comics</a>
+            <a class="btn btn-sm btn-outline-primary" 
+            href="comics_index_zh.html">狗头漫画</a>
+            <a class="btn btn-sm btn-outline-primary" 
+            href="PRA.html">People's Republic of Animals</a>
+            <a class="btn btn-sm btn-outline-primary" 
+            href="ProjectAbandon.html">ProjectAbandon</a>
             
-
-        </div>
+            <a class="btn btn-sm btn-outline-warning" 
+            href="BuilderApply.html">MC BuilderInfo</a>
+            <a class="btn btn-sm btn-light" 
+            href="DC.html">DC</a> 
+            <a class="btn btn-sm btn-light" 
+            href="raccoon_comics.html">Raccoon comics</a>
         </div>
         
-        <div class="container center ">
-        <div class="threequarters silver center ">
-            <div class="padded"><h6>1.Fuel efficiency 油耗</h6>
-            <br>Convert "miles per gallon" to "liter per 100 kilometer"
+        <div class="container">
+            <br>
+            <h5>1.Fuel efficiency 油耗</h5>
+            Convert "miles per gallon" to "liter per 100 kilometer"
             <br>转换“英里每加仑”与“百公里油耗”
-            </div>
-            <form class=" padded ">
+
+            <form>
             <div class="container">
             <label class="quarter right">Miles per gallon 英里每加仑</label>
-            <div class="half"><input type='text' id='MPG'/></div>
+            <input type='text' id='MPG'/>
             </div>
             <div class="container">
             <label class="quarter right">Liter per 100 kilometer 百公里油耗</label>
-            <div class="half"><input type='text' id='LPKM'/></div>
+            <input type='text' id='LPKM'/>
             </div>
             </form>
             <div class="padded">
-            <h6>code abandoned</h6>
-            <pre>
+            <b>code abandoned</b>
+            <pre class="small">
             var abd1_mpg = document.getElementById('MPG'),
                 abd1_lpkm = document.getElementById('LPKM');
 
@@ -99,69 +99,64 @@
             </pre>
             </div>
             
-            <div class="padded"><h6>2.Height conversion 身高转换</h6>
-            <br>Convert "centimeter" to "feet inch"
+            <h5>2.Height conversion 身高转换</h5>
+            Convert "centimeter" to "feet inch"
             <br>转换“厘米”与“英尺英寸”
-            <br>-“How tall are you?” -"173cm" -"?????" 
-            </div>
-            <form class=" padded ">
+            <pre class="small">
+            -“How tall are you?”
+            -"173cm"
+            -"?????" 
+            </pre>
+            <form>
             <div class="container">
             <label class="quarter right">Centimeter 厘米</label>
-            <div class="half"><input type='text' id='cm'/></div>
+            <input type='text' id='cm'/>
             </div>
             <br>
             <div class="container">
             <label class="quarter right">Feet 英尺</label>
-            <div class="half"><input type='text' id='ft'/></div>
+            <input type='text' id='ft'/>
             </div>
             <div class="container">
             <label class="quarter right">Inch 英寸</label>
-            <div class="half"><input type='text' id='in'/></div>
+            <input type='text' id='in'/>
             </div>
             </form>
             
-            <div class="padded">
-            <h6>code abandoned</h6>
-            <pre>
-            nothing
-            </pre>
-            </div>
+
             
-             <div class="padded"><h6>3.Reversing a string 倒转句子</h6>
-            <br>Reverse a sentence to avoid online censorship
+            <h5>3.Reversing a string 倒转句子</h5>
+            Reverse a sentence to avoid online censorship
             <br>将句子倒转以规避网络审查
-            </div>
             <form class=" padded ">
             <div class="container">
             <label class="quarter right">Input 输入</label>
-            <div class="half"><input type='text' id='reverseIn'/></div>
-            </div>
+            <input type='text' id='reverseIn'/>
             <br>
-            <div class="container">
             <label class="quarter right">Output 输出</label>
-            <div class="half"><input type='text' id='reverseOut'/></div>
+            <input type='text' id='reverseOut'/>
             </div>
             </form>
             
             
-            <div class="padded"><h6>4.Powerball combination 彩票数字生成</h6>
-            <br>
+            <h5>4.Powerball combination 彩票数字生成</h5>
             <p>generate a random <a href="http://www.calottery.com/play/draw-games/powerball">POWERBALL </a> combination</p>
-            <button class="btn navy" onclick="no4_main()" >Go</button>
+            <button class="btn btn-primary" onclick="no4_main()" >Go</button>
             <p id="no4_regnum"> </p>
             <p id="no4_sepnum"> </p>
-			<p>James asked me, what if there are repeated combination generated?
-			<br>“The posibility of that incident is quite close to the posibility of you winning the Powerball using these combinations.”
-			</p>
-			<p>James曾经问我：如果生成的数组中，有两组是一样的怎么办。
-			<br>“这个事件的几率和你拿这些数组买彩票中头奖的几率差不了多少。”
-			</p>
-            </div>
+            <p class="small">James asked me, what if there are repeated combination generated?
+            <br>“The posibility of that incident is quite close to the posibility of you winning the Powerball using these combinations.”
             
-        </div>
+            <br>James曾经问我：如果生成的数组中，有两组是一样的怎么办。
+            <br>“这个事件的几率和你拿这些数组买彩票中头奖的几率差不了多少。”
+            </p>
+
         </div>
         
         <br>
+        
+
+
         
         <footer class= "padded gray">
         <p class= "padded">last updated: 11:16 PM Thursday, October 12, 2017 (PDT)
