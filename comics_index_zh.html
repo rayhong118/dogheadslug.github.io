@@ -166,8 +166,8 @@
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 var xmlDoc = xmlhttp.responseXML;
                 var comicsArray = xmlDoc.getElementsByTagName("Comics");
-                var mainPanel = "<button type='button' class='btn btn-primary' onclick='getPrevComic()'><i class='fa fa-arrow-left'></i> Older </button> " +
-                "<button type='button' class='btn btn-primary' onclick='getNextComic()'> Newer <i class='fa fa-arrow-right'></i></button><h4> <br>" +
+                var mainPanel = "<button type='button' class='btn btn-primary' onclick='getPrevComic()'><i class='fa fa-arrow-left'></i> Prev </button> " +
+                "<button type='button' class='btn btn-primary' onclick='getNextComic()'> Next <i class='fa fa-arrow-right'></i></button><h4> <br>" +
                 comicsArray[indexOfComics].getElementsByTagName("Title")[0].childNodes[0].nodeValue +
                 "</h4><h6>"+
 				comicsArray[indexOfComics].getElementsByTagName("Date")[0].childNodes[0].nodeValue +
@@ -175,8 +175,8 @@
                 comicsArray[indexOfComics].getElementsByTagName("Src")[0].childNodes[0].nodeValue +
                 "' class='img-fluid'><br><h5>" + 
                 comicsArray[indexOfComics].getElementsByTagName("Desc")[0].childNodes[0].nodeValue +
-                "</h5><br><button type='button' class='btn btn-primary' onclick='getPrevComic()'><i class='fa fa-arrow-left'></i> Older </button> " +
-                "<button type='button' class='btn btn-primary' onclick='getNextComic()'>Newer <i class='fa fa-arrow-right'></i></button>";
+                "</h5><br><button type='button' class='btn btn-primary' onclick='getPrevComic()'><i class='fa fa-arrow-left'></i> Prev </button> " +
+                "<button type='button' class='btn btn-primary' onclick='getNextComic()'>Next <i class='fa fa-arrow-right'></i></button>";
                  document.getElementById("mainPanel").innerHTML = mainPanel;
             }
             //else alert("database not ready yet!");
