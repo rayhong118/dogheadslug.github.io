@@ -32,25 +32,7 @@
         <h2 class="padded"><font>Project Abandon<br>‘放弃’计划</font></h2>
         </header>
         
-        <div class="container">
-			<a class="btn btn-sm btn-light" 
-			href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a>
-			<a class="btn btn-sm btn-outline-primary" 
-			href="comics_index.html">Doghead comics</a>
-			<a class="btn btn-sm btn-outline-primary" 
-			href="comics_index_zh.html">狗头漫画</a>
-			<a class="btn btn-sm btn-outline-primary" 
-			href="PRA.html">People's Republic of Animals</a>
-			<a class="btn btn-sm btn-outline-primary" 
-			href="ProjectAbandon.html">ProjectAbandon</a>
-			
-			<a class="btn btn-sm btn-outline-warning" 
-			href="BuilderApply.html">MC BuilderInfo</a>
-			<a class="btn btn-sm btn-light" 
-			href="DC.html">DC</a> 
-			<a class="btn btn-sm btn-light" 
-			href="raccoon_comics.html">Raccoon comics</a>
-        </div>
+        <div id="navigation"></div>
         <br>
 		
         <div class="container">
@@ -245,5 +227,9 @@ function no4_main(){
     document.getElementById("no4_regnum").innerHTML = points;
 }
 
+
+$(function(){
+	$("#navigation").load("navigation.html"); 
+});
 
 </script>
