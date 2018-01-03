@@ -25,25 +25,7 @@
             </div>
         </header>
     
-        <div class="container">
-			<a class="btn btn-sm btn-light" 
-			href="index.html"><i class="fa fa-home" aria-hidden="true"></i></a>
-			<a class="btn btn-sm btn-outline-primary" 
-			href="comics_index.html">Doghead comics</a>
-			<a class="btn btn-sm btn-outline-primary" 
-			href="comics_index_zh.html">狗头漫画</a>
-			<a class="btn btn-sm btn-outline-primary" 
-			href="PRA.html">People's Republic of Animals</a>
-			<a class="btn btn-sm btn-outline-primary" 
-			href="ProjectAbandon.html">ProjectAbandon</a>
-			
-			<a class="btn btn-sm btn-outline-warning" 
-			href="BuilderApply.html">MC BuilderInfo</a>
-			<a class="btn btn-sm btn-light" 
-			href="DC.html">DC</a> 
-			<a class="btn btn-sm btn-light" 
-			href="raccoon_comics.html">Raccoon comics</a>
-        </div>
+        <div id="navigation"></div>
     
         <div class="container center padded">
         <div class="container center threequarters">
@@ -58,10 +40,19 @@
         </div>
         </div>
 		
+		
+		
 		<footer class= "container">
         <p>
         <br><a href="https://github.com/dogheadslug"><font color="black"><i class="fa fa-github" aria-hidden="true"></i>
         GitHub: dogheadslug</font></a>
         </p>
         </footer>
+		
+		<script>
+		$(function(){
+			$("#navigation").load("navigation.html"); 
+		});
+		</script>
+	</body>
 </html>
