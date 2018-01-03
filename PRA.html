@@ -62,7 +62,7 @@
         </div>
 		
 		<footer class= "container">
-		<p>version 0.2
+		<p>version 0.2.1
 		<br><a href="https://github.com/dogheadslug"><font color="black"><i class="fa fa-github" aria-hidden="true"></i>
 		GitHub: dogheadslug</font></a>
 		</p>
@@ -121,7 +121,7 @@
             "  " +
             x[maxComicsIndex].getElementsByTagName("Title")[0].childNodes[0].nodeValue +
             "</button><br>";
-        for (i = x.length-2; i > 0 ; i--) { 
+        for (i = x.length-2; i >= 0 ; i--) { 
             table += "<button type='button' class='btn btn-link' onclick=getComicsMain("+
             i +
             ")>" +
@@ -137,7 +137,7 @@
         document.getElementById("comics_list").innerHTML = table;
 		
 		//on page load, show prologue 
-        getComicsMain(0);
+        getComicsMain(1);
     }
 	
 	//2 then load the image, title, date and description
