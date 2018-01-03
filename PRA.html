@@ -41,9 +41,9 @@
 		<div id="navigation"></div>
 
 		<div class="container">
-			<h3> introduction</h3>
+			<h4>简介</h4>
 			<br>动物人民共和国是一个宗桑国家。
-			<br>图片显示系统尚未完工。
+			<br>
 		</div>
 		
 		<div class="container">
@@ -62,7 +62,7 @@
         </div>
 		
 		<footer class= "container">
-		<p>version 0.1
+		<p>version 0.2
 		<br><a href="https://github.com/dogheadslug"><font color="black"><i class="fa fa-github" aria-hidden="true"></i>
 		GitHub: dogheadslug</font></a>
 		</p>
@@ -82,7 +82,7 @@
 	});
 	
 	$( document ).ready(function() {
-		//console.log( "ready!" );
+		console.log( "ready!" );
 		loadXMLDoc();
 		//getLatestIndex();
 	});
@@ -113,17 +113,6 @@
         
         maxComicsIndex=x.length-1;
 		
-        for (i = 0; i <= x.length-2 ; i++) { 
-            table += "<button type='button' class='btn btn-link' onclick=getComicsMain("+
-            i +
-            ")>" +
-            x[i].getElementsByTagName("Date")[0].childNodes[0].nodeValue +
-            "  " +
-            x[i].getElementsByTagName("Title")[0].childNodes[0].nodeValue +
-            "</button><br>";
-			if( i == maxComicsIndex )table += "<span class='badge badge-success'>最新</span>";
-        }
-		
 		//add a badge for the latest ep
 		table += "<span class='badge badge-success'>最新</span><button type='button' class='btn btn-link' onclick=getComicsMain("+
             maxComicsIndex +
@@ -132,6 +121,18 @@
             "  " +
             x[maxComicsIndex].getElementsByTagName("Title")[0].childNodes[0].nodeValue +
             "</button><br>";
+        for (i = x.length-2; i > 0 ; i--) { 
+            table += "<button type='button' class='btn btn-link' onclick=getComicsMain("+
+            i +
+            ")>" +
+            x[i].getElementsByTagName("Date")[0].childNodes[0].nodeValue +
+            "  " +
+            x[i].getElementsByTagName("Title")[0].childNodes[0].nodeValue +
+            "</button><br>";
+        }
+		
+		
+
 
         document.getElementById("comics_list").innerHTML = table;
 		
