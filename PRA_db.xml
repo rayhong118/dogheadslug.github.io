@@ -1,11 +1,12 @@
 <CATALOG>
-
+<!--lase modified time-->
+<lmt>2233</lmt>
 <Comics>
 <Index>0</Index>
 <Date>2017/12/10</Date>
 <Title>EP00</Title>
 <Src>EP00.jpg</Src>
-<Desc></Desc>
+<Desc> </Desc>
 </Comics>
 
 <Comics>
@@ -13,7 +14,7 @@
 <Date>2017/12/17</Date>
 <Title>EP01</Title>
 <Src>EP01.jpg</Src>
-<Desc></Desc>
+<Desc> </Desc>
 </Comics>
 
 <Comics>
@@ -21,7 +22,7 @@
 <Date>2017/12/24</Date>
 <Title>EP02</Title>
 <Src>EP02.jpg</Src>
-<Desc></Desc>
+<Desc> </Desc>
 </Comics>
 
 <Comics>
@@ -29,7 +30,7 @@
 <Date>2017/12/31</Date>
 <Title>EP03</Title>
 <Src>EP03.jpg</Src>
-<Desc></Desc>
+<Desc> </Desc>
 </Comics>
 
 
