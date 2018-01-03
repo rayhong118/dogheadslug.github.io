@@ -11,38 +11,181 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
     
 	<style>
+	#top {
+		position: fixed;
+		bottom: 5em;
+		right: 5em;
+		width: 5em;
+		z-index:100;
+		
+	}
+	
+	#content {
+		position: fixed;
+		bottom: 10em;
+		right: 5em;
+		width: 5em;
+		z-index:100;
+	}
 	
 	</style>
 	
     </head>
   
     <body>
-        <header class="container">
-            <a href="index.html"><font color="white">Zhihao Hong's personal webpage</font></a>
-            <h2 class="padded"><b>People's Republic of Animals</b></h2>
-        </header>
-    
-        <div id="navigation"></div>
-    
-        <div class="container">
+		<header class="container">
+			<a href="index.html"><font color="white">Zhihao Hong's personal webpage</font></a>
+			<h2 class="padded"><b>People's Republic of Animals</b></h2>
+		</header>
+
+		<div id="navigation"></div>
+
+		<div class="container">
 			<h3> introduction</h3>
 			<br>动物人民共和国是一个宗桑国家。
 			<br>图片显示系统尚未完工。
+		</div>
+		
+		<div class="container">
+			<div class="row">
+            <div class="col-lg-4">
+                <table class="table table-striped" id="comics_list">
+                </table>
+            </div>
+            
+            <div class="col-lg-8 text-center" id="mainpanel">
+                <!--button type="button" onclick="loadXMLDoc()">Get comics List</button-->
+                <div id="mainPanel"></div>
+                <br><br>
+            </div>
+			</div>
         </div>
 		
-		
-		
 		<footer class= "container">
-        <p>
-        <br><a href="https://github.com/dogheadslug"><font color="black"><i class="fa fa-github" aria-hidden="true"></i>
-        GitHub: dogheadslug</font></a>
-        </p>
-        </footer>
+		<p>
+		<br><a href="https://github.com/dogheadslug"><font color="black"><i class="fa fa-github" aria-hidden="true"></i>
+		GitHub: dogheadslug</font></a>
+		</p>
+		</footer>
 		
-		<script>
-		$(function(){
-			$("#navigation").load("navigation.html"); 
-		});
-		</script>
+		<a class="btn btn-default" id="top" ><i class="fa fa-angle-double-up fa-3x"></i></a>
+		<a class="btn btn-default" id="content" ><i class="fa fa-picture-o fa-2x" ></i></a>
+		
+	<script>
+	$("#top").click(function() {
+		$("html, body").animate({ scrollTop: 0 }, "slow");
+	});
+	
+	$("#content").click(function() {
+		$("html, body").animate({
+		scrollTop:   $("#mainpanel").offset().top}, "slow");
+	});
+	
+	$( document ).ready(function() {
+		//console.log( "ready!" );
+		loadXMLDoc();
+		//getLatestIndex();
+	});
+		
+	var currComicsIndex = 0;
+	var maxComicsIndex = 0;
+	
+	function loadXMLDoc() {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                getComicList(this);
+            }
+            //else alert("database not ready yet!");
+        };
+        xmlhttp.open("GET", "PRA_db.xml", true);//get data from database
+        xmlhttp.send();
+    }
+	
+	//1. on page load, get the list of all comics from xml database.
+    //show date and title of each item
+    function getComicList(xml){
+        var i;
+        var xmlDoc = xml.responseXML;
+        //var table="<tr><td><p>list of all comics</p></td></tr>";
+        var table="<br>";
+        var x = xmlDoc.getElementsByTagName( 'Comics');
+        
+        maxComicsIndex=x.length-1;
+		
+        for (i = 0; i <= x.length-2 ; i++) { 
+            table += "<button type='button' class='btn btn-link' onclick=getComicsMain("+
+            i +
+            ")>" +
+            x[i].getElementsByTagName("Date")[0].childNodes[0].nodeValue +
+            "  " +
+            x[i].getElementsByTagName("Title")[0].childNodes[0].nodeValue +
+            "</button><br>";
+			if( i == maxComicsIndex )table += "<span class='badge badge-success'>最新</span>";
+        }
+		
+		//add a badge for the latest ep
+		table += "<span class='badge badge-success'>最新</span><button type='button' class='btn btn-link' onclick=getComicsMain("+
+            maxComicsIndex +
+            ")>" +
+            x[maxComicsIndex].getElementsByTagName("Date")[0].childNodes[0].nodeValue +
+            "  " +
+            x[maxComicsIndex].getElementsByTagName("Title")[0].childNodes[0].nodeValue +
+            "</button><br>";
+
+        document.getElementById("comics_list").innerHTML = table;
+		
+		//on page load, show prologue 
+        getComicsMain(0);
+    }
+	
+	//2 then load the image, title, date and description
+    function getComicsMain(indexOfComics){
+        currComicsIndex = indexOfComics;
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                var xmlDoc = xmlhttp.responseXML;
+                var comicsArray = xmlDoc.getElementsByTagName("Comics");
+                var mainPanel = "<button type='button' class='btn btn-primary' onclick='getPrevComic()'><i class='fa fa-arrow-left'></i> Prev </button> " +
+                "<button type='button' class='btn btn-primary' onclick='getNextComic()'> Next <i class='fa fa-arrow-right'></i></button><h4>" +
+                comicsArray[indexOfComics].getElementsByTagName("Title")[0].childNodes[0].nodeValue +
+                "</h4><br><h6>"+
+				comicsArray[indexOfComics].getElementsByTagName("Date")[0].childNodes[0].nodeValue +
+				"</h6><img src='/PRA/"+
+                comicsArray[indexOfComics].getElementsByTagName("Src")[0].childNodes[0].nodeValue +
+                "' class='img-fluid'><br><h5>" + 
+                comicsArray[indexOfComics].getElementsByTagName("Desc")[0].childNodes[0].nodeValue +
+                "</h5><br><button type='button' class='btn btn-primary' onclick='getPrevComic()'><i class='fa fa-arrow-left'></i> Prev </button> " +
+                "<button type='button' class='btn btn-primary' onclick='getNextComic()'>Next <i class='fa fa-arrow-right'></i></button>";
+                 document.getElementById("mainPanel").innerHTML = mainPanel;
+            }
+            //else alert("database not ready yet!");
+        };
+        xmlhttp.open("GET", "PRA_db.xml", true);//get data from database
+        xmlhttp.send();
+        
+        //scroll to image position
+        $("html, body").animate({
+        scrollTop:   $("#mainpanel").offset().top}, "slow");
+    }
+	
+	//newer, higher index value
+    function getNextComic(){
+        //console.log(currComicsIndex);
+        if (currComicsIndex == maxComicsIndex) alert("this is the most recent one!");
+        else getComicsMain(currComicsIndex+1);
+    }
+    //older, lower index value
+    function getPrevComic(){
+        //console.log(currComicsIndex);
+        if (currComicsIndex == 0) alert("this is the oldest one!");
+        else getComicsMain(currComicsIndex-1);
+    }
+	
+	$(function(){
+		$("#navigation").load("navigation.html"); 
+	});
+	</script>
 	</body>
 </html>
