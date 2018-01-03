@@ -8,26 +8,24 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-        <style>
-        
-        #top {
-            position: fixed;
-            bottom: 5em;
-            right: 5em;
-            width: 5em;
-			z-index:100;
-            
-        }
-        
-        #content {
-            position: fixed;
-            bottom: 10em;
-            right: 5em;
-            width: 5em;
-			z-index:100;
-        }
-        
-        </style>
+	<style>
+	#top {
+		position: fixed;
+		bottom: 4em;
+		right: 2em;
+		width: 4em;
+		z-index:100;
+		
+	}
+	
+	#content {
+		position: fixed;
+		bottom: 8em;
+		right: 2em;
+		width: 4em;
+		z-index:100;
+	}
+	</style>
     </head>
      
     <body>
@@ -128,7 +126,7 @@
         getComicsMain(maxComicsIndex);
     }
 
-    //then load the image, title, date and discription
+    //then load the image, title, date and description
     function getComicsMain(indexOfComics){
         currComicsIndex = indexOfComics;
         var xmlhttp = new XMLHttpRequest();
