@@ -1,46 +1,256 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
     <head>
-    <title>水表大亨</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+		<title>水表大亨</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+		<style>
+			.tab {
+				display: none;
+				background-color: #eeeeee;
+				padding: 1em;
+				font-family: Microsoft YaHei;
+			}
+			
+			
+		</style>
+
+		
     </head>
 
     <body>
 	
-	<header class="container center padded blue">
-		<a href="index.html"><font color="white">Zhihao Hong's personal webpage</font></a>
-		<h2><font>海岛世界门户</font></h2>
-	</header>
+		<header class="container center padded blue">
+			<a href="index.html"><font color="white">Zhihao Hong's personal webpage</font></a>
+			<h2><font><b>海岛世界门户</b></font></h2>
+		</header>
 
-	<div id="navigation"></div>
+		<!--navigation bar-->
+		<div class="container" style="font-family: Microsoft YaHei;">
+			<button class="btn  btn-primary"
+			onClick="showTab(0)"><i class="fa fa-home" aria-hidden="true"> </i></button>
 
-	<div class=" container">
-		<br>
-		<p class="padded"></p>
-		<div class="padded">
+			<div class="btn-group" >
+				<button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">生存</button>
+				<div class="dropdown-menu">
+				<button class="dropdown-item" 
+				onClick="showTab(1)">生存首页</button>
+				<div class="dropdown-divider"></div>
+				<button class="dropdown-item" 
+				onClick="showTab(2)">生存规则</button>
+				<button class="dropdown-item" 
+				onClick="showTab(3)">主线任务指引</button>
+				<button class="dropdown-item" 
+				onClick="showTab(4)">支线任务列表</button>
+				<button class="dropdown-item" 
+				onClick="showTab(5)">官方物价基准</button>
+				<!--a class="dropdown-item" 
+				href="tropico-survival.html">市场</a-->
+				</div>
+			</div>
+
+			<div class="btn-group">
+				<button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">建造</button>
+				<div class="dropdown-menu">
+				<button class="dropdown-item" 
+				href="tropico-builder.html">建造首页</button>
+				<div class="dropdown-divider"></div>
+				<button class="dropdown-item" 
+				href="tropico-survive.html">建筑规则</button>
+				<button class="dropdown-item" 
+						href="tropico-survive.html">基础建设</button>
+				<button class="dropdown-item" 
+				href="tropico-survive.html">建筑师申请</button>
+				<button class="dropdown-item" 
+				href="tropico-survive.html">建筑设计参考</button>
+				</div>
+			</div>
+
+			<a class="btn  btn-outline-info" 
+			href="tropico-admin.html">管理团队</a>
+			<a class="btn  btn-outline-info" 
+			href="satellite-map.html">地图</a>
 
 		</div>
-	</div>
+		<!--end of navigation bar-->
+		
+		<!--main content-->
+		<div class=" container">
+			<br>
+			
+			<!--0 home page-->
+			<div class="tab">
+				<img class="img-fluid" src="imgs/2018-02-05_08.43.48.png">
+			</div>
+			
+			<!--1 survival main page-->
+			<div class="tab">
+				<img class="img-fluid" src="imgs/2018-02-05_08.44.45.png">
+				<br><p class="small" style="background-color: #888888;">海岛的食品工厂空空如也，烟的走向预示了这个世界的荒谬</p>
+				
+				<div class="text-center" style=" padding: 1em 0;">
+					<br>
+					<btn class="btn btn-primary" onClick="showTab(2)"><b>了解生存规则</b></btn>
+					<btn class="btn btn-primary" onClick="showTab(3)"><b>主线任务指引</b></btn>
+					<btn class="btn btn-primary" onClick="showTab(4)"><b>支线任务列表</b></btn>
+					<btn class="btn btn-primary" onClick="showTab(5)"><b>查看物价基准</b></btn>
+					<br>
+				</div>
+				
+				<img class="img-fluid"  style="margin: auto; width: 100%;" src="imgs/tropico_map0.png">
+				
+			</div>
+			
+			<!--2 survival rules-->
+			<div class="tab">
+				<h5><b>生存规则（制定中）</b></h5>
+				现有部分已经生效
+				<p class="small">
+					<br><b>在公共区域可以采集的方块有</b>
+					<br>农业：
+					<br>所有农作物（收获后补种）
+					<br>林业：
+					<br>所有仅属于树木的原木（请务必砍伐干净，部分树木不受砍树插件影响）
+					<br>矿业：
+					<br>只允许采集裸露在外的散乱石堆（混杂了原石，石头，半砖和藤曼）
+				</p>
+				<img src="./imgs/2018-02-05_08.45.14.png" class="img-fluid">
+			</div>
+			
+			<!--3 survival missions-->
+			<div class="tab">
+				<h5><b>主线任务</b></h5>
+				<p class="small">
+					<br><b>第一阶段：安家</b>
+					<br>1 与路人甲（坐标 2218/39/1841）交谈（右击npc进行对话）,直到获得市政厅坐标
+					<br>2 前往市政厅，与工作人员（坐标 3085.5/47/1669.5）交谈。提示：直接越野是最佳地面路线。
+					<br>[如果需要公寓]
+					<br>3 将确认单交给公寓管理员（坐标 2349.5/44/2514.5），然后在qq群内联系管理员以获得入住帮助
+					<br>[暂未生效]如果在跑路过程中遗失了确认单，请重新前往市政厅领取
+					<br>
+					<br><b>第二阶段 足食</b>
+					<br>这一阶段的任务由工作人员[如果不需要新手公寓]或者公寓管理员开启
+					<br>1 前往附近的农田，向农场主（坐标 2237.5/44/2292.5）报到
+					<br>2 收取一组小麦交给农场主
+					<br>3 再收获三组小麦，将小麦运送到食品工厂，交到食品工厂员工（坐标 2299.5/34/2104.5）手中
+					<br>4 向工厂提供燃料：一组木炭，交给食品工厂员工
+					<br>
+					<br><b>第三阶段 勘探</b>
+					<br>这一阶段的任务由食品工厂员工开启
+					<br>1 寻找附近的铁矿（任务描述不给坐标）。提示：铁矿在新手岛上，位于市政道路附近。抵达铁矿后右击门口附近的牌子完成任务。
+					<br>2 使用矿机，向矿工提供一组圆石
+					<br>
+					<br><b>第四阶段 筑造</b>
+					<br>这一阶段的任务由矿工开启
+					<br>抵达建筑办公室，与建筑办公室管理员（坐标 2337.5/37/2190.5）对话。
+					<br>多余的材料请放在门外空地上的箱子里
+					<br>
+					<br>新手主线任务完结。
+				</p>
+				<img class="img-fluid" src="imgs/map_newbie.jpg">
+			</div>
+			
+			<!--4 survival daily missions-->
+			<div class="tab">
+				<h5><b>日常任务[未上线]</b></h5>
+				<p class="small">
+					<br>食品工厂：食品工厂员工（坐标 2299.5/34/2104.5）
+					<br><br>原料供应。提供一组小麦  奖励货币 100
+					<br>燃料供应。提供一组木炭 奖励货币100
+					<br>原料供应。提供一组生牛肉 奖励货币 200
+					<br>原料供应。提供一组生羊肉 奖励货币 200
+					<br>原料供应。提供一组生猪肉 奖励货币 200
+					<br>原料供应。提供一组生鸡肉 奖励货币 100
+					<br>
+					<br>风车：农场主（坐标 2237.5/44/2292.5）
+					<br>维修任务。提供一组原木  奖励货币 100
+					<br>
+					<br>建筑办公室：建筑办公室管理员（坐标 2337.5/37/2190.5）
+					<br>原料供应。提供一组原石  奖励货币 100
+					<br>
+					<br>钓鱼小屋：老渔民（坐标 2446 38 2480）
+					<br>燃料供应。提供一组木炭 奖励货币100
+					<br>原料供应。提供一组鱼 奖励货币 200
+					<br>
+					<br>公寓管理员：公寓管理员（坐标 2349.5/44/2514.5）
+					<br>维修任务。提供一个铁锭 奖励货币 100
+					<br>杀怪任务。杀死任意野怪50个 奖励货币500
+					<br>
+					<br>消防队： 消防员（坐标 2449 39 1863）
+					<br>食物供应。提供一组面包 奖励货币200
+					<br>
+					<br>官方矿物商店：店员 2368/44/2470
+					<br>兑换矿物：提供8个绿宝石，奖励一个钻石
+					<br>//这个任务严格执行每24小时只能接一次
+				</p>
+				<img src="./imgs/2018-02-05_08.45.30.png" class="img-fluid">
+			</div>
+			
+			<!--5 product price-->
+			<div class="tab">
+				<h5><b>物价基准</b></h5>
+				以 原木每组64 为基础，官方收购价是基准价格的一半，官方出售价同基准价
+				<p class="small">
+					<br><b>土地价格 每格10</b>
+					<br>
+					<br><b>矿物类</b>
+					<br>绿宝石 单价40 官方不出售
+					<br>钻石 单价320
+					<br>铁矿石 每组320
+					<br>金矿石 每组640
+					<br>红石矿石 每组640
+					<br>青金石矿石 每组640
+					<br>
+					<br><b>农作物类</b>
+					<br>小麦 胡萝卜 土豆 甘蔗 甜菜根 鸡蛋 每组64
+					<br>牛肉 鸡肉 羊肉 猪肉 各种鱼 苹果 兔肉 每组128
+					<br>西瓜片 每组32
+					<br>南瓜 每组128
+					
+				</p>
+				<img src="./imgs/2018-02-05_08.47.18.png" class="img-fluid">
+			</div>
+			
+			<!--6 -->
+			<div class="tab">
+				<h5><b>title</b></h5>
 
-	
-	<footer class=" container center">
-	<p>last updated: 7:15 PM
-	Sunday, December 31, 2017 (PST)
-	<br><a href="https://github.com/dogheadslug"><font color="black"><i class="fa fa-github" aria-hidden="true"></i>
-	GitHub: dogheadslug</font></a>
-	</p>
-	</footer>
+			</div>
+			
+			
+		</div>
+
+
+		<footer class=" container center">
+		<p>last updated: 10:48 AM
+		Thursday, February 8, 2018 (PST)
+		<br><a href="https://github.com/dogheadslug"><font color="black"><i class="fa fa-github" aria-hidden="true"></i>
+		GitHub: dogheadslug</font></a>
+		</p>
+		</footer>
 	
 	<script>
-	$(function(){
-		$("#navigation").load("navigation.html"); 
-	});
+
+	var currentTab = 0; // Current tab is set to be the first tab (0)
+	var prevTab = currentTab;//the tab which is displayed prevously
+	showTab(currentTab); // Display the current tab
+	
+	//show tab
+	function showTab(selectedTab){
+		
+		var Tabs = document.getElementsByClassName("tab");
+		Tabs[prevTab].style.display = "none";//hide prevTab
+		Tabs[selectedTab].style.display = "block";//show selected tab
+		prevTab = selectedTab;
+		
+	}
+	
+
 	</script>
 		
 	</body>
