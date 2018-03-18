@@ -6,7 +6,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+		<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script-->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
 		<style>
@@ -42,7 +43,7 @@
 				onClick="showTab(1)">生存首页</button>
 				<div class="dropdown-divider"></div>
 				<button class="dropdown-item" 
-				onClick="showTab(2)">生存规则</button>
+				onClick="showTab(2)">生存规则【重要】</button>
 				<button class="dropdown-item" 
 				onClick="showTab(3)">主线任务指引</button>
 				<button class="dropdown-item" 
@@ -58,16 +59,16 @@
 				<button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">建造</button>
 				<div class="dropdown-menu">
 				<button class="dropdown-item" 
-				href="tropico-builder.html">建造首页</button>
+				onClick="showTab(6)">建造首页</button>
 				<div class="dropdown-divider"></div>
 				<button class="dropdown-item" 
-				href="tropico-survive.html">建筑规则</button>
+				onClick="showTab(7)">建筑规则【重要】</button>
 				<button class="dropdown-item" 
-						href="tropico-survive.html">基础建设</button>
+						href="tropico-survive.html">(基础建设)</button>
 				<button class="dropdown-item" 
-				href="tropico-survive.html">建筑师申请</button>
+				href="tropico-survive.html">(建筑师申请)</button>
 				<button class="dropdown-item" 
-				href="tropico-survive.html">建筑设计参考</button>
+				href="tropico-survive.html">(建筑设计参考)</button>
 				</div>
 			</div>
 
@@ -86,7 +87,8 @@
 			<!--0 home page-->
 			<div class="tab text-center">
 				<img class="img-fluid" src="imgs/2018-02-05_08.43.48.png">
-				<br><br><br><br>
+				<br><br><br>
+				<p style="text-align: left; font-size: 1.2em; padding: 1em;">海岛世界是梦の世界服务器最新的精品生存世界。在海岛，我们向火柴盒说不，向流浪帐篷说不，向偷懒的穴居者说不。在海岛，我们用全新的建筑流程，致力于做出即美观又实用的建筑。来海岛吧，提升自己的建筑水平，靠建筑来获得财富吧！</p>
 				
 				<embed height="415" width="544" quality="high" allowfullscreen="true" type="application/x-shockwave-flash" src="//static.hdslb.com/miniloader.swf" flashvars="aid=19758995&page=1" pluginspage="//www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash"></embed>
 				
@@ -114,15 +116,61 @@
 			<div class="tab">
 				<h5><b>生存规则（制定中）</b></h5>
 				现有部分已经生效
+				
+				
 				<p class="small">
-					<br><b>在公共区域可以采集的方块有</b>
-					<br>农业：
-					<br>所有农作物（收获后补种）
-					<br>林业：
-					<br>所有仅属于树木的原木（请务必砍伐干净，部分树木不受砍树插件影响）
-					<br>矿业：
-					<br>只允许采集裸露在外的散乱石堆（混杂了原石，石头，半砖和藤曼）
+					<br><b>【注意】</b>
+					<br>海岛的矿业依靠自动矿机而非人工挖掘，所以只允许出于应急目的（比如在野外需要制作工具）采集裸露在外的散乱石堆（混杂了原石，石头，半砖和藤曼）。
+					<br>
 				</p>
+				
+				<p class="small">
+					<br><b>【重要】新手公寓规则</b>
+					<br>不得破坏公寓原有结构和设施。如果对私人区域进行改造，搬出以前请务必恢复原样，未能做到这点将被处以1000元罚款。
+					<br>如果需要帮助请在群内联系管理员。
+					<br>
+				</p>
+				
+				<p class="small">
+					<br>盗窃
+					<br>涉案金额小于128且为首次的，监禁3天
+					<br>涉案金额大于等于128且为首次的，监禁7天
+					<br>累计2次，监禁一个月
+					<br>累计3次，永久封禁
+					<br>
+					<br>未经许可大规模破坏公共区域地形
+					<br>初犯，监禁7天
+					<br>累计两次，永久封禁
+					<br>累计3次，永久封禁
+					<br>
+					<br>未经许可破坏他人/公共财产，包括且不限于建筑，动物，农产品等
+					<br>初犯，且损毁不严重的，监禁3天
+					<br>累计2次或者初犯且损毁严重的监禁一个月
+					<br>累计3次，永久封禁
+					<br>
+					<br>故意杀死玩家且受害人要求追究责任
+					<br>初犯，监禁7天
+					<br>累计2次，监禁一个月
+					<br>累计3次，永久封禁
+					<br>
+					<br>破坏服务器性能的行为，包括且不限于高频红石脉冲，大规模水流等
+					<br>初犯且主观无意，且有及时补救、自首情节的，监禁3天
+					<br>初犯且主观故意，监禁一个月
+					<br>累计2次 永久封禁
+					<br>
+					<br>聊天内刷屏，人身攻击，广告等，经劝阻无效
+					<br>初犯，监禁3小时
+					<br>累计2次，监禁1天
+					<br>累计3次及以上，监禁7天
+					<br>
+					<br>法院建成之后，有争议案件均交予法院处理，判决结果由随机抽取的6名群内玩家决定，以简单多数（至少3票同意）为结果，若是罪名成立则处罚翻倍。若是审议此案的玩家认为有必要直接永久封禁被告人，则需要绝对多数（至少4票同意）支持处以极刑。
+
+					<br>
+					<br>
+					<br>
+				</p>
+				
+				
 				<img src="./imgs/2018-02-05_08.45.14.png" class="img-fluid">
 			</div>
 			
@@ -222,7 +270,35 @@
 			
 			<!--6 -->
 			<div class="tab">
-				<h5><b>title</b></h5>
+				<h5><b>建造首页</b></h5>
+
+			</div>
+		
+			<!--7 -->
+			<div class="tab">
+				<h5><b>建筑规则/建造流程</b></h5>
+
+				<br>建筑流程
+				<br>1，确认区域功能划分
+				<br>在发展成熟的区域会有功能限定，比如商业区内不能出现纯住宅用途的建筑
+				<br>
+				<br>2，划定用地范围，购买土地
+				<br>划定用地区域要求与距离最近的被购买土地有3格宽的空间
+				<br>划定用地区域其大小、位置需要合理，不得故意挤占位置、破坏剩余空地的利用价值
+				<br>土地定价为面积*10，首次购买私人住宅用地时土地价格为面积*1
+				<br>
+				<br>3，管理员会帮助购买者用染色羊毛确认土地边界
+				<br>
+				<br>4，建筑验收
+				<br>第一阶段：绘制房型图，墙壁位置，门窗位置，房间用途均需要标注，每一层都需要有对应的房型图，在游戏内用染色羊毛绘制
+				<br>只有完成第一阶段以后才能继续
+				<br>第二阶段，完成主体结构，要求内外墙壁完工，顶部封顶，内部天花板地板完工。建筑风格需要符合地区要求，请向管理员咨询建筑风格事宜。
+				<br>第三阶段，内部设计
+				<br>
+				<br>为了建造出能够通过验收的建筑请参考海岛的现有建筑
+				<br>长时间未能通过验收的建筑项目将会被爆破（并不是）
+				<br>未能在开工后两个月内完工且未提交延期申请的土地将会被收回，已经放置的方块将被移除。
+
 
 			</div>
 			
