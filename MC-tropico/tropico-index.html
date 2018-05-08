@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+		<link href="./slideshow.css" rel="stylesheet">
 		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 		<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script-->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
@@ -75,7 +76,7 @@
 			<a class="btn  btn-outline-info" 
 			href="tropico-admin.html">管理团队（页面未完成）</a>
 			<button class="btn  btn-outline-info" 
-			onClick="showTab(3)">地图（页面未完成）</button>
+			onClick="showTab(8)">地图</button>
 
 		</div>
 		<!--end of navigation bar-->
@@ -86,11 +87,39 @@
 			
 			<!--0 home page-->
 			<div class="tab text-center">
-				<img class="img-fluid" src="./imgs/2018-02-05_08.43.48.jpg">
+				<div class="slideshow-container">
+
+					<div class="mySlides slide-fade">
+					  <div class="number-text">1 / 4</div>
+					  <img src="./imgs/slideshow1.jpg" style="width:100%">
+					  <div class="caption-text">出生点——中央医院</div>
+					</div>
+
+					<div class="mySlides slide-fade">
+					  <div class="number-text">2 / 4</div>
+					  <img src="./imgs/slideshow2.jpg" style="width:100%">
+					  <div class="caption-text">码头</div>
+					</div>
+
+					<div class="mySlides slide-fade">
+					  <div class="number-text">3 / 4</div>
+					  <img src="./imgs/slideshow3.jpg" style="width:100%">
+					  <div class="caption-text">海岛机场</div>
+					</div>
+					
+					<div class="mySlides slide-fade">
+					  <div class="number-text">4 / 4</div>
+					  <img src="./imgs/slideshow4.jpg" style="width:100%">
+					  <div class="caption-text">渔民小屋和公寓</div>
+					</div>
+
+				</div>
+				<br>
+				
 				<br><br><br>
 				<p style="text-align: left; font-size: 1.2em; padding: 1em;">海岛世界是梦の世界服务器最新的精品生存世界。在海岛，我们向火柴盒说不，向流浪帐篷说不，向偷懒的穴居者说不。在海岛，我们用全新的建筑流程，致力于做出即美观又实用的建筑。来海岛吧，提升自己的建筑水平，靠建筑来获得财富吧！</p>
 				
-				<embed height="415" width="544" quality="high" allowfullscreen="true" type="application/x-shockwave-flash" src="//static.hdslb.com/miniloader.swf" flashvars="aid=19758995&page=1" pluginspage="//www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash"></embed>
+				<embed height="415" width="544" quality="high" allowfullscreen="true" type="application/x-shockwave-flash" src="//static.hdslb.com/miniloader.swf" flashvars="aid=19758995&page=1" pluginspage="//www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash">
 				
 			</div>
 			
@@ -108,7 +137,7 @@
 					<br>
 				</div>
 				
-				<img class="img-fluid"  style="margin: auto; width: 100%;" src="./imgs/tropico_map0.jpg">
+				
 				
 			</div>
 			
@@ -163,10 +192,10 @@
 					<br>累计2次，监禁1天
 					<br>累计3次及以上，监禁7天
 					<br>
-					<br>法院建成之后，有争议案件均交予法院处理，判决结果由随机抽取的6名群内玩家决定，以简单多数（至少3票同意）为结果，若是罪名成立则处罚翻倍。若是审议此案的玩家认为有必要直接永久封禁被告人，则需要绝对多数（至少4票同意）支持处以极刑。
+					<!--br>法院建成之后，有争议案件均交予法院处理，判决结果由随机抽取的6名群内玩家决定，以简单多数（至少3票同意）为结果，若是罪名成立则处罚翻倍。若是审议此案的玩家认为有必要直接永久封禁被告人，则需要绝对多数（至少4票同意）支持处以极刑。-->
 
 					<br>
-					<br>
+					<br><a href="http://www.bluedcraft.com/rule/">服务器规则</a>非建筑部分同样适用于海岛世界
 					<br>
 				</p>
 				
@@ -179,7 +208,10 @@
 				<h5><b>主线任务</b></h5>
 				<p>
 					<br><b>第一阶段：安家</b>
-					<br><a href="https://www.bilibili.com/video/av20910502/">第一阶段跑路指引视频</a>
+					<br>
+					<p>为了您的安全，请尽量只在白天出行。
+					<br><a href="https://www.bilibili.com/video/av20910502/">第一阶段跑路指引视频，路痴请看这里</a>
+					</p>
 					<br>1 与路人甲（坐标 2218/39/1841）交谈（右击npc进行对话）,直到获得市政厅坐标
 					<br>2 前往市政厅，与工作人员（坐标 3085.5/47/1669.5）交谈。提示：直接越野是最佳地面路线。
 					<br>[如果需要公寓]
@@ -187,6 +219,7 @@
 					<br>[暂未生效]如果在跑路过程中遗失了确认单，请重新前往市政厅领取
 					<br>
 					<br><b>第二阶段 足食</b>
+					<br>以下阶段任务都在新手岛上进行
 					<br>这一阶段的任务由工作人员[如果不需要新手公寓]或者公寓管理员开启
 					<br>1 前往附近的农田，向农场主（坐标 2237.5/44/2292.5）报到
 					<br>2 收取一组小麦交给农场主
@@ -210,8 +243,10 @@
 			
 			<!--4 survival daily missions-->
 			<div class="tab">
-				<h5><b>日常任务[未上线]</b></h5>
+				<h5><b>日常任务</b></h5>
 				<p class="">
+					<br>完成日常任务可以获得货币兑换券，在新手公寓底楼的便利店可以兑现兑换券。
+					<br>
 					<br>食品工厂：食品工厂员工（坐标 2299.5/34/2104.5）
 					<br><br>原料供应。提供一组小麦  奖励货币 100
 					<br>燃料供应。提供一组木炭 奖励货币100
@@ -248,6 +283,7 @@
 			<div class="tab">
 				<h5><b>物价基准</b></h5>
 				以 原木每组64 为基础，官方收购价是基准价格的一半，官方出售价同基准价
+				<br>海岛当前开放的交易地点有：新手公寓底楼的便利店、官方矿物商店，建筑办公室，食品工厂附近的石头空地。
 				<p class="">
 					<br><b>土地价格 每格10</b>
 					<br>
@@ -299,11 +335,30 @@
 				<br>为了建造出能够通过验收的建筑请参考海岛的现有建筑
 				<br>长时间未能通过验收的建筑项目将会被爆破（并不是）
 				<br>未能在开工后两个月内完工且未提交延期申请的土地将会被收回，已经放置的方块将被移除。
-
-
 			</div>
 			
 			
+			<!--8 -->
+			<div class="tab">
+				<h5><b>卫星地图</b></h5>
+				
+				<a href="http://111.230.202.221:2333/index.html#"><h6>卫星地图</h6></a>
+				
+				<h6><b>在线卫星地图注册说明</b></h6>
+				<p>1，进入卫星地图页面，选择对话框右上角的注册绑定
+				<br>2，按要求填写注册表单。
+				<br>获取注册码：在游戏内聊天框输入 /dynmap webregister，会获得一个“XXXX-XXXX”格式的注册码。
+				<br>3，完成注册绑定流程后登陆卫星地图页面，便可以查看服务器的实时地图</p>
+				
+				<h5><b>静态地图</b></h5>
+				海岛全貌
+				<img class="img-fluid"  style="margin: auto; width: 100%;" src="./imgs/tropico_map0.jpg">
+				<br>
+				任务相关地点
+				<img class="img-fluid" src="./imgs/map_newbie.jpg">
+				
+			</div>
+	
 		</div>
 
 
@@ -329,6 +384,25 @@
 		Tabs[selectedTab].style.display = "block";//show selected tab
 		prevTab = selectedTab;
 		
+	}
+		
+	//slideshow from w3schools
+	var slideIndex = 0;
+	showSlides();
+
+	function showSlides() {
+		var i;
+		var slides = document.getElementsByClassName("mySlides");
+		//var dots = document.getElementsByClassName("dot");
+		for (i = 0; i < slides.length; i++) {
+		   slides[i].style.display = "none";  
+		}
+		slideIndex++;
+		if (slideIndex > slides.length) {slideIndex = 1}    
+		
+		slides[slideIndex-1].style.display = "block";  
+		
+		setTimeout(showSlides, 8000); // Change image every 2 seconds
 	}
 	
 
