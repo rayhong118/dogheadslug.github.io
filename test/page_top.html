@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<div id="topbar">
+    <p class="text-center">top bar text</p>
+</div>
+    
+<br>
+	
+<div class="container-fluid" style="width:80%;">
+    
+	<div class="row" >
+		<div class="col-md-3 text-center">
+		<br><br>
+		<!--fixed the position of search icon when page is resized-->
+			<form role="form" class="container text-center"> 
+			  <div class="container form-group has-feedback text-center" id="search-block">
+				<!--label class="control-label sr-only"> </label-->
+				<input id="search" type="text" class="form-control">
+				<i class="form-control-feedback fa fa-search" id="search-icon"></i>
+			  </div>
+			</form>
+
+		</div>
+
+		<div class="col-md-6 text-center">
+			<a href="main_page.html"><img class="mx-auto img-fluid" src="./icon.png"/></a>
+			<p style="color:#e66b8c; letter-spacing: 1.2px;"></p>
+			<p style="color:#e66b8c; letter-spacing: 1.2px;">Influence-based Short Video Commerce Platform</p>
+		</div>
+
+		<div class="col-md-3 text-center">
+		<br><br>
+		<!--cart and notification should be displayed after user has signed in?-->
+			<a href="#" data-toggle="modal" data-target="#LoginSignup">LOGIN / SIGN UP </a>
+
+			<!--log in/sign up modal-->
+			<div id="LoginSignup" class="modal fade" role="dialog">
+				<br><br><br><br><br>
+				<div class="modal-dialog" style="max-width: 50em;">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h4 class="modal-title">LOGIN / SIGN UP</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+
+						<div class="row">
+							<div class="col">
+								<div class="modal-body">
+								<a href="register.html">Don't have an account yet? Register here!</a>
+								<br><br>
+								<form id="login">
+								<p><input type="email" class="form-control" id="email" placeholder="Your e-mail "></p>
+								<p><input type="password" class="form-control" id="pwd" placeholder="Password"></p>
+								</form>
+								<a class="small" href="pwdrecover.html">Forget password?</a>
+								</div>
+
+								<div class="modal-footer">
+									<button type="submit" 
+									onclick="location.href='http://aurapur.com/user_account.html';" class="btn btn-primary" data-dismiss="modal">OK</button>
+									<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								</div>
+							</div>
+
+							<div class="col" style="border-left: 1px dashed #ededed;">
+								<br>
+								<button class="btn" style="background-color: #ff2e31; color: white; padding: 0.5em 2em 0.5em 2em; margin:5px; width: 80%;">
+									SIGN IN WITH GOOGLE <i class="fa fa-google" aria-hidden="true"></i>
+								</button>
+								<br>
+								<button class="btn" style="background-color: #3b5998; color: white; padding: 0.5em 2em 0.5em 2em; margin:5px; width: 80%;">
+									SIGN IN WITH FACEBOOK <i class="fa fa-facebook" aria-hidden="true"></i>
+								</button>
+								<br>
+								<button class="btn" style="background-color: #55acee; color: white; padding: 0.5em 2em 0.5em 2em; margin:5px; width: 80%;">
+									SIGN IN WITH TWITTER <i class="fa fa-twitter" aria-hidden="true"></i>
+								</button>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<!-- dropdown menu for cart -->
+			<div class="dropdown open"  id="cart" >
+				<button role="button" type="button" class="cartDropdown" data-toggle="dropdown" style="background-color: white; border-width: 0; "> 
+					<i class="fa fa-shopping-cart fa-2x" aria-hidden="true" style="color: #e56a8b"> </i></button>
+				
+				
+			  	<div class="dropdown-menu dropdown-menu-right" style="padding: 1em; width: 20em;">
+					<h5>1 Item in Cart</h5>
+					<div class="dropdown-divider"></div>
+
+
+					<div class="dropdown-item" style="padding: 0.1em;">
+						<img src="./product/product/tmp/1.jpg" style="width: 6em; height: 6em; border-radius: 50%; float:left;">
+						<p class="small"><b style=" color: #ea89a2; ">100% Pure</b>
+							<br><a href="product_detail.html">Bamboo Blur Powder</a>
+							<br>$25.00
+							<br>ITEM 452345 |  QTY 1 </p>
+					</div>
+					<div class="dropdown-divider"></div>
+
+					<div style="text-align: right;">
+						Cart total(2 items): $25.00
+						<a href="shopping_cart.html" class="btn" style="background-color: #e66b8c; color: white; width: 10em;" >Check out</a>
+					</div>
+				
+				</div>
+			</div>
+			
+			<!-- dropdown menu for notification-->
+			<div class="dropdown open"  id="notification" >
+				<button role="button" type="button"  data-toggle="dropdown" style="background-color: white; border-width: 0; "> 
+					<i class="fa fa-bell-o fa-2x" aria-hidden="true" style="color: #e56a8b"> </i></button>
+				
+				
+				<div class="dropdown-menu dropdown-menu-right" style="padding: 1em; width: 20em;">
+					<h5>Notifications</h5>
+					<div class="dropdown-divider"></div>
+
+
+					<div class="dropdown-item" style="padding: 0.1em;">
+						<img src="usericon.jpg" style="width: 3em; height: 3em; border-radius: 50%; float:left;">
+						<p class="small"><b>user name</b>
+							<br>notificatioin text</p>
+					</div>
+					<div class="dropdown-divider"></div>
+
+					<div class="dropdown-item" style="padding: 0.1em;">
+						<img src="usericon.jpg" style="width: 3em; height: 3em; border-radius: 50%; float:left;">
+						<p class="small"><b>user name</b>
+							<br>notificatioin text</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!--new navigation bar-->
+	<div class="row" >
+		<div class="col text-center"><a href="main_page.html" class="navlink">TOP VEDIOS</a></div>
+		<div class="col text-center"><a href="category.html" class="navlink">CATEGORY</a></div>
+		<!--div class="col text-center"><a href="latest_story.html">LATEST STORY </a></div-->
+		<div class="col text-center"><a href="coco_star.html" class="navlink">COCO STAR</a></div>
+		<div class="col text-center"><a href="coco_coin.html" class="navlink">COCO COIN</a></div>
+		
+	</div>
+    
+</div>
+<!--end of container-->
