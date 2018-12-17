@@ -153,10 +153,7 @@
                 "' class='img-fluid'><br>"+
 				"<button type='button' class='btn btn-outline-primary btn-sm' onclick='getPrevComic()'><i class='fa fa-arrow-left'></i> Prev </button> " +
                 "<button type='button' class='btn btn-outline-primary btn-sm' onclick='getNextComic()'>Next <i class='fa fa-arrow-right'></i></button> " +
-				"<br><br><a target='blank' href='" + 
-                //this part here used to be description. It's a link to this weibo post now.
-                comicsArray[indexOfComics].getElementsByTagName("Desc")[0].childNodes[0].nodeValue +
-                "' class='btn btn-outline-info btn-sm'><i class='fa fa-weibo'></i>微博链接</a><br>";
+				"<br>";
                  document.getElementById("mainPanel").innerHTML = mainPanel;
             }
             //else alert("database not ready yet!");
