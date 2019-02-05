@@ -418,12 +418,11 @@
 	
 	//show tab
 	function showTab(selectedTab){
-		
 		var Tabs = document.getElementsByClassName("tab");
 		Tabs[prevTab].style.display = "none";//hide prevTab
 		Tabs[selectedTab].style.display = "block";//show selected tab
 		prevTab = selectedTab;
-		
+        $("html, body").animate({ scrollTop: 0 }, "fast");
 	}
 		
 	//slideshow from w3schools
@@ -444,7 +443,6 @@
 		
 		setTimeout(showSlides, 8000); // Change image every 2 seconds
 	}
-	
 
 	</script>
 		
