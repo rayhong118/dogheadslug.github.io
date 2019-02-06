@@ -2,8 +2,13 @@
 body{
     background-image: url("./akiyama-bg.jpg");
     background-size: cover;
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center; 
+}
+
+#carouselExampleInterval{
+    border: solid 1px rgba(255, 255, 255, 0.5);
 }
 
 .navbar{
