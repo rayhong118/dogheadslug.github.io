@@ -7,88 +7,82 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
 		
+		<link rel="stylesheet" type="text/css" href="style.css">
 		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-		<style>
-			.tab {
-				display: none;
-				background-color: #eeeeee;
-				padding: 1em;
-				font-family: Microsoft YaHei;
-			}
-
-		</style>
 
     </head>
 
     <body>
-		<header class="container center padded blue">
-			<h2><font><b>海岛世界门户</b></font></h2>
-		</header>
-
-		<!--navigation bar-->
-		<div class="container" style="font-family: Microsoft YaHei;">
-			<a class="btn btn-primary" href="http://www.bluedcraft.com/"><i class="fa fa-home" aria-hidden="true"> </i>服务器首页</a>
-			<button class="btn  btn-outline-primary"
-			onClick="showTab(0)"><i class="fa fa-home" aria-hidden="true"> </i>海岛首页</button>
-			<div class="btn-group" >
-				<button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">生存</button>
-				<div class="dropdown-menu">
-				<button class="dropdown-item" 
-				onClick="showTab(1)">生存首页</button>
-				<div class="dropdown-divider"></div>
-				<button class="dropdown-item" 
-				onClick="showTab(2)">生存规则【重要】</button>
-				<button class="dropdown-item" 
-				onClick="showTab(3)">主线任务指引</button>
-				<button class="dropdown-item" 
-				onClick="showTab(4)">支线任务列表</button>
-				<button class="dropdown-item" 
-				onClick="showTab(5)">官方物价基准</button>
-				<!--a class="dropdown-item" 
-				href="tropico-survival.html">市场</a-->
-				</div>
+		<nav class="navbar navbar-expand-sm navbar-light sticky-top" >
+			<div class="container">
+				<a class="navbar-brand" href="../index.html">Bluedcraft</a>
+				<span class="navbar-brand"> Tropico 海岛-新手区</span>
+				<span class="badge badge-success">和平模式</span>
+				<button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+					aria-expanded="false" aria-label="Toggle navigation"></button>
 			</div>
+		</nav>
 
-			<div class="btn-group">
-				<button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">建造</button>
-				<div class="dropdown-menu">
-				<button class="dropdown-item" 
-				onClick="showTab(6)">建造首页</button>
-				<div class="dropdown-divider"></div>
-				<button class="dropdown-item" 
-				onClick="showTab(7)">建筑规则【重要】</button>
-				</div>
-			</div>
-
-			<a class="btn  btn-outline-info" 
-			href="#">管理团队（页面未完成）</a>
-			<button class="btn  btn-outline-info" 
-			onClick="showTab(8)">地图</button>
-
-		</div>
-		<!--end of navigation bar-->
 		
 		<!--main content-->
 		<div class=" container">
+			<!--navigation bar-->
+			<div class="container" style="font-family: Microsoft YaHei;">
+				<button class="btn  btn-outline-primary"
+				onClick="showTab(0)"><i class="fa fa-home" aria-hidden="true"> </i>海岛首页</button>
+				<div class="btn-group" >
+					<button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">生存</button>
+					<div class="dropdown-menu">
+					<button class="dropdown-item" 
+					onClick="showTab(1)">生存首页</button>
+					<div class="dropdown-divider"></div>
+					<button class="dropdown-item" 
+					onClick="showTab(2)">生存规则【重要】</button>
+					<button class="dropdown-item" 
+					onClick="showTab(3)">主线任务指引</button>
+					<button class="dropdown-item" 
+					onClick="showTab(4)">支线任务列表</button>
+					<button class="dropdown-item" 
+					onClick="showTab(5)">官方物价基准</button>
+					<!--a class="dropdown-item" 
+					href="tropico-survival.html">市场</a-->
+					</div>
+				</div>
+	
+				<div class="btn-group">
+					<button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">建造</button>
+					<div class="dropdown-menu">
+					<button class="dropdown-item" 
+					onClick="showTab(6)">建造首页</button>
+					<div class="dropdown-divider"></div>
+					<button class="dropdown-item" 
+					onClick="showTab(7)">建筑规则【重要】</button>
+					</div>
+				</div>
+	
+				<button class="btn  btn-outline-info" 
+				onClick="showTab(8)">地图</button>
+	
+			</div>
+			<!--end of navigation bar-->
 			<br>
 			
 			<!--0 home page-->
 			<div class="tab text-center">
-				<p class="alert alert-info" style="text-align: left; font-size: 1.2em; padding: 1em;">
-						===================================================
-					<br>快速开始：以下是最基本的信息，请务必阅读
-					<br>===================================================
-					<br>1，服务器IP mc.bluedcraft.com 当前版本1.13.2 
+				<div class="quickstart">
+					快速开始：以下是最基本的信息，请务必阅读
+					<hr>
+					1，服务器IP mc.bluedcraft.com 当前版本1.13.2 
 					<br>2，请注册<a href="http://mc.bluedcraft.com:2333/">卫星地图</a>
 					<br>3，收获作物务必补种。禁止挖矿。请通过矿机（参看地图页面）和矿区获取矿物
 					<br>4，可以自由建筑。管理员将会定期查看选拔有潜力的玩家进入建筑组。
 					<br>5，其他规定依照常识，如有不明确的地方请查看海岛的具体规则或在群里询问。
 					<br>6，海岛已经关闭怪物生成。
-					<br>===================================================
-				</p>
+				</div>
 
+				<br>
 				
 				<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 				    <ol class="carousel-indicators">

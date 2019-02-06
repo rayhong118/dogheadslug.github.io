@@ -1,0 +1,22 @@
+body{
+    background-color: aliceblue;
+}
+
+.tab {
+    display: none;
+    background-color: #eeeeee;
+    padding: 1em;
+    font-family: Microsoft YaHei;
+}
+
+.navbar{
+    background: rgba(255, 255, 255, 1);
+}
+
+.quickstart{
+    text-align: left;
+    font-size: 1em;
+    padding: 1em;
+    border-left: 5px red solid;
+    background: white;
+}
