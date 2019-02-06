@@ -1,10 +1,31 @@
 
+body{
+    background-image: url("./main-bg.jpg");
+    background-attachment: fixed;
+    background-position: center; 
+}
 
-a.card :hover{
+.navbar{
+    position: sticky;
+    background: rgba(255, 255, 255, 1);
+}
+.main-content{
+    margin: 0 5%;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.card :hover{
     text-shadow: 2px 2px 10px black;
 }
 
+.card-img{
+    opacity: 0.75;
+}
 
 h3, h5 {
     transition-duration: 500ms;
+}
+
+footer{
+    background-color: white;
 }
