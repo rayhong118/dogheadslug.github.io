@@ -13,10 +13,18 @@ body{
     background: rgba(255, 255, 255, 1);
 }
 
-.quickstart{
+.alert{
     text-align: left;
     font-size: 1em;
     padding: 1em;
     border-left: 5px red solid;
+    background: white;
+}
+
+.info{
+    text-align: left;
+    font-size: 1em;
+    padding: 1em;
+    border-left: 5px yellow solid;
     background: white;
 }
