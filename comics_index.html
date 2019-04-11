@@ -28,9 +28,9 @@
     
     .episode{
         width: 100%;
-        border-bottom: 1px solid #BBBBBB
+        border-bottom: 1px solid #CCCCCC
     }
-    .episode :hover{
+    .episode :focus{
         background-color: #AAAAAA
     }
 	</style>
@@ -115,7 +115,7 @@
         
         maxComicsIndex=x.length-1;
         for (i = x.length-1; i >= 0; i--) { 
-            table += "<button type='button' class='episode' onclick=getComicsMain("+
+            table += "<button type='button' class='btn episode' onclick=getComicsMain("+
             i +
             ")>" +
             x[i].getElementsByTagName("Date")[0].childNodes[0].nodeValue +
