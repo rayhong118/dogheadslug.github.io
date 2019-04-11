@@ -26,17 +26,7 @@
 		z-index:100;
     }
     
-    .episode{
-        width: 100%;
-        border-bottom: 1px solid #CCCCCC;
-        border-right: none;
-    }
-    .episode :active{
-        background-color: #AAAAAA
-    }
-    .episode :focus{
-        background-color: #AAAAAA
-    }
+
 	</style>
     </head>
      
@@ -118,7 +108,7 @@
         
         maxComicsIndex=x.length-1;
         for (i = x.length-1; i >= 0; i--) { 
-            table += "<button type='button' class='episode' onclick=getComicsMain("+
+            table += "<button type='button' class='btn btn-light btn-sm' onclick=getComicsMain("+
             i +
             ")>" +
             x[i].getElementsByTagName("Date")[0].childNodes[0].nodeValue +
