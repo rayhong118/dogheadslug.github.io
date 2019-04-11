@@ -28,3 +28,8 @@ body{
     border-left: 5px yellow solid;
     background: white;
 }
+
+.center{
+    vertical-align: 50%;
+    margin: auto;
+}

@@ -24,7 +24,14 @@
 		right: 2em;
 		width: 4em;
 		z-index:100;
-	}
+    }
+    
+    .episode{
+        background-color: #BBBBBB
+    }
+    .episode :hover{
+        background-color: #999999
+    }
 	</style>
     </head>
      
@@ -35,7 +42,7 @@
 		
 		<div id="navigation"></div>
         <br>
-        
+        <hr>
         <div class="container">
 			<div class="row">
             <div class="col-lg-4">
@@ -107,7 +114,7 @@
         
         maxComicsIndex=x.length-1;
         for (i = x.length-1; i >= 0; i--) { 
-            table += "<button type='button' class='btn btn-link' onclick=getComicsMain("+
+            table += "<button type='button' class='episode' onclick=getComicsMain("+
             i +
             ")>" +
             x[i].getElementsByTagName("Date")[0].childNodes[0].nodeValue +
