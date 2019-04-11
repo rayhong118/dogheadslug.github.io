@@ -26,7 +26,12 @@
 		right: 2em;
 		width: 4em;
 		z-index:100;
-	}
+    }
+    
+    .episode{
+        width: 100%;
+        text-align: left;
+    }
     </style>
     </head>
   
@@ -120,7 +125,7 @@
             x[maxComicsIndex].getElementsByTagName("Title")[0].childNodes[0].nodeValue +
             "</button><br>";
         for (i = x.length-2; i >= 0 ; i--) { 
-            table += "<button type='button' class='btn btn-link' onclick=getComicsMain("+
+            table += "<button type='button' class='btn btn-light btn-sm episode' onclick=getComicsMain("+
             i +
             ")>" +
             x[i].getElementsByTagName("Date")[0].childNodes[0].nodeValue +
