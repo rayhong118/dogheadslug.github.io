@@ -161,23 +161,24 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         <script>
+
             $.ajax({
+                type: "get",
                 url:'http://mc.bluedcraft.com:2333/login.html',
-                success: function(data){
-                    //alert('success' + data);
-                    
-                    $('#dynmap_status').addClass('badge badge-success');
-                    $('#dynmap_status').text('在线');
-                    
-                },
-                error: function(xhr){
-                    //alert(xhr.status + " " + xhr.statusText);
-                    
-                    $('#dynmap_status').addClass('badge badge-danger');
-                    $('#dynmap_status').text('不可用');
-                    
-                }
+                dataType: 'jsonp',
+                jsonpCallback:'callback',
+                complete: function(xhr, textStatus) {
+                    if(xhr.status === 200){
+                        $('#dynmap_status').addClass('badge badge-success');
+                        $('#dynmap_status').text('在线');
+                    } else {
+                        $('#dynmap_status').addClass('badge badge-danger');
+                        $('#dynmap_status').text('不可用');
+                    }
+                } 
             });
+
+
         </script>
     </body>
 </html>
