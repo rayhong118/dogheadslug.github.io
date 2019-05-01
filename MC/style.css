@@ -33,6 +33,10 @@ body{
     color: black ;
 }
 
+.nav-link{
+    padding: 4px 16px !important;
+}
+
 .nav-link:hover{
     border-radius: 0 !important;
     background-color: #aaaaaa !important;
